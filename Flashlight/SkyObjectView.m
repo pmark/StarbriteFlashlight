@@ -8,6 +8,8 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "SkyObjectView.h"
+#import "AppDelegate.h"
+
 
 @implementation SkyObjectView
 

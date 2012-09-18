@@ -24,7 +24,6 @@ typedef enum
     RunMode runMode;
     AVCaptureSession *captureSession;
     AVCaptureDevice *captureDevice;
-    SM3DARController *sm3dar;
     IBOutlet UIView *menuContainer;
     IBOutlet UIView *hudView;
     IBOutlet UILabel *starMessageLabel;

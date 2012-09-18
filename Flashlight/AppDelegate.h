@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "SM3DAR.h"
 
 @class ViewController;
 
@@ -18,9 +19,10 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) SM3DARController *sm3dar;
 
 - (void)playClickSound;
 
 @end
 
-#define APP_DELEGATE (AppDelegate*)[UIApplication sharedApplication].delegate
+#define APP_DELEGATE ((AppDelegate*)[UIApplication sharedApplication].delegate)

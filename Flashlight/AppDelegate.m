@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import "SM3DAR.h"
 
 @interface AppDelegate (Private) 
 -(void)setupAudio;
@@ -19,6 +18,7 @@
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
+@synthesize sm3dar = _sm3dar;
 
 - (void)dealloc
 {

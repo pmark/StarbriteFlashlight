@@ -153,6 +153,28 @@ typedef struct
 //
 //
 //
+typedef enum
+{
+    SM3DARCalloutStyleNone,
+    SM3DARCalloutStyleSimple,
+    SM3DARCalloutStyleDetail
+} SM3DARCalloutStyle;
+
+@interface SM3DARCalloutView : UIView <SM3DARFocusDelegate> {}
+
+@property (nonatomic, assign) id<SM3DARCalloutViewDelegate> delegate;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, retain) UILabel *subtitleLabel;
+@property (nonatomic, retain) UILabel *distanceLabel;
+
+- (id) initWithDelegate:(id<SM3DARCalloutViewDelegate>)delegate;
+
+@end
+
+
+//
+//
+//
 @interface SM3DARDetailCalloutView : UIView <SM3DARFocusDelegate> {}
 
 @property (nonatomic, retain) UILabel *titleLabel;
@@ -340,6 +362,8 @@ typedef struct
 }
 
 @property (nonatomic, retain) SM3DARPoint *point;
+@property (nonatomic, assign) SM3DARCalloutView *calloutView;
+@property (nonatomic, assign) SM3DARCalloutStyle calloutStyle;
 
 - (void) buildView;
 - (CGAffineTransform) pointTransform;

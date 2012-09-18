@@ -7,9 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
 #import "SkyObjectView.h"
 #import "AppDelegate.h"
 #import "PlanetView.h"
+#import "EarthView.h"
+#import "NSDictionary+BSJSONAdditions.h"
 #include <stdlib.h>
 
 
@@ -32,7 +35,6 @@ CGFloat degreesToRadians(CGFloat degrees);
     [captureSession release];
     [menuContainer release];
     menuContainer = nil;
-    [sm3dar release];
     [hudView release];
     [starMessageLabel release];
     [m_quotationImage release];
@@ -177,13 +179,11 @@ CGFloat degreesToRadians(CGFloat degrees);
 
 - (void)sm3darViewDidLoad:(SM3DARController *)_sm3dar
 {
-    sm3dar = _sm3dar;
-    sm3dar.hudView = hudView;
+    _sm3dar.hudView = hudView;
     
-    [SM3DAR_BSJSON class];
     NSDictionary *d = [NSDictionary dictionary];
     
-    NSLog(@"\n\nDict: %@", [d sm3dar_jsonStringValue]);
+    NSLog(@"\n\nDict: %@", [d jsonStringValue]);
 
     _sm3dar.view.hidden = YES;
     [self.view insertSubview:_sm3dar.view atIndex:0];
@@ -198,7 +198,7 @@ CGFloat degreesToRadians(CGFloat degrees);
     
     if (newPOI)
     {
-        [self performSelector:@selector(hideQuote) withObject:nil afterDelay:3.0];
+//        [self performSelector:@selector(hideQuote) withObject:nil afterDelay:3.0];
         
         NSString *imageName = [NSString stringWithFormat:@"quotation%@.png", newPOI.title];
         [m_quotationImage setImage:[UIImage imageNamed:imageName]];
@@ -240,7 +240,7 @@ CGFloat degreesToRadians(CGFloat degrees);
 
 - (void)setup3dar
 {
-    if (!sm3dar)
+    if (!APP_DELEGATE.sm3dar)
     {
         [[SM3DARController alloc] initWithDelegate:self];
         starMessageLabel.hidden = YES;
@@ -338,7 +338,7 @@ CGFloat degreesToRadians(CGFloat degrees);
     point.title = starTitle;
     point.worldPoint = coord;
     point.canReceiveFocus = YES;
-    [sm3dar addPoint:point];
+    [APP_DELEGATE.sm3dar addPoint:point];
     
     [v release];    
     [point release];
@@ -364,7 +364,7 @@ CGFloat degreesToRadians(CGFloat degrees)
     CGFloat minDistance = 5000.0;    
     
     CGFloat degrees = 0;
-    NSInteger starCount = 12;
+    NSInteger starCount = 13;
     NSInteger starSpacingAngle = 360 / starCount;
     
     for (int i=0; i < starCount; i++)
@@ -390,7 +390,7 @@ CGFloat degreesToRadians(CGFloat degrees)
     p.view = v;
     p.worldPoint = coord;    
     v.sizeScalar = size;    
-    [sm3dar addPoint:p];
+    [APP_DELEGATE.sm3dar addPoint:p];
 }
 
 - (NSInteger) rdmSign
@@ -413,40 +413,54 @@ CGFloat degreesToRadians(CGFloat degrees)
     return min + [self rdm:range sign:YES];
 }
 
+- (void) addEarth
+{
+    CGFloat earthSize = 17.0;
+
+    Coord3D coord;
+    coord.x = 0;
+    coord.y = 0;
+    coord.z = -38;
+
+    SM3DARFixture *p = [[[SM3DARFixture alloc] init] autorelease];
+    EarthView *v = [[[EarthView alloc] initWithTextureNamed:@"SkyImage1024x512.jpg"] autorelease];
+    p.view = v;
+    p.worldPoint = coord;
+    p.canReceiveFocus = YES;
+    v.sizeScalar = earthSize;
+    [APP_DELEGATE.sm3dar addPoint:p];
+
+}
+
 - (void) addPlanetoids
 {
     Coord3D coord;
     
-    for (int i=0; i < 12; i++)
+    for (int i=0; i < 2; i++)
     {
-        coord.x = [self rdmDistance:0 range:8000];
-        coord.y = [self rdmDistance:0 range:8000];
-        coord.z = [self rdmDistance:-2000 range:3000];
+        coord.x = [self rdmDistance:3000 range:8000];
+        coord.y = [self rdmDistance:3000 range:8000];
+        coord.z = [self rdmDistance:1000 range:2000];
         
         NSString *planetName = [NSString stringWithFormat:@"planet%i.png", (i%3)+1]; // ([self rdm:3 sign:NO] + 1)];
         [self addPlanetAt:coord texture:planetName size:(140 + arc4random() % 680)];
     }
-    
-    CGFloat earthSize = 20;
-    coord.x = -earthSize / 2;
-    coord.y = -earthSize / 2;
-    coord.z = -earthSize * 2;
-    [self addPlanetAt:coord texture:@"WorldAtNight.jpg" size:earthSize];
 
+    [self addEarth];    
 }
 
 - (void) addSkyPano
 {
     SM3DARFixture *sky = [[[SM3DARFixture alloc] init] autorelease];
-    sky.view = [[SphereBackgroundView alloc] initWithTextureNamed:@"3dar_pano_bg.jpg"];
+    sky.view = [[SphereBackgroundView2 alloc] initWithTextureNamed:@"3dar_pano_bg.jpg"];
     
     Coord3D coord = {0, 0, 0};
     sky.worldPoint = coord;
     
     NSLog(@"\n adding sky\n");
-    [sm3dar addPoint:sky];
+    [APP_DELEGATE.sm3dar addPoint:sky];
     
-    sm3dar.backgroundPoint = sky;
+    APP_DELEGATE.sm3dar.backgroundPoint = sky;
 }
 
 - (void) setupScene
@@ -462,6 +476,9 @@ CGFloat degreesToRadians(CGFloat degrees)
 
 - (void) sm3darLoadPoints:(SM3DARController *)_sm3dar
 {
+    APP_DELEGATE.sm3dar = _sm3dar;
+    APP_DELEGATE.sm3dar.focusView = nil;
+
     [self setupScene];
 }
 
@@ -480,15 +497,15 @@ CGFloat degreesToRadians(CGFloat degrees)
     
     NSLog(@"Going to sky mode...");
 
-    [sm3dar resume];
-    sm3dar.view.hidden = NO;
+    [APP_DELEGATE.sm3dar resume];
+    APP_DELEGATE.sm3dar.view.hidden = NO;
     
     menuContainer.hidden = YES;
     m_starInstructions.hidden = NO;
     starMessageLabel.hidden = NO;    
     hudView.hidden = NO;
     
-    [self.view bringSubviewToFront:sm3dar.view];
+    [self.view bringSubviewToFront:APP_DELEGATE.sm3dar.view];
     [self.view bringSubviewToFront:hudView];
     [self.view bringSubviewToFront:m_starInstructions];
 }
@@ -500,8 +517,8 @@ CGFloat degreesToRadians(CGFloat degrees)
     m_starInstructions.hidden = YES;
     menuContainer.hidden = NO;
     
-    sm3dar.view.hidden = YES;
-    [sm3dar suspend];
+    APP_DELEGATE.sm3dar.view.hidden = YES;
+    [APP_DELEGATE.sm3dar suspend];
     [soundEnvironment stopPlaybackForCurrentPlayer];
 
     [self.view bringSubviewToFront:menuContainer];

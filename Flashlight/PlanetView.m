@@ -17,7 +17,7 @@
     glScalef(-1.0, 1.0, 1.0);
     glRotatef(90, 1.0, 0.15, 0.0);
     
-    rotationAngle += 1.0;
+    rotationAngle += 0.66;
     glRotatef(rotationAngle, 0, 0, 1.0);
     
     [super drawInGLContext];
