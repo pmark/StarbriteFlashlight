@@ -46,6 +46,8 @@ CGFloat degreesToRadians(CGFloat degrees);
     self.lightContainer = nil;
     self.dimmerHandle = nil;
     self.dimmerTouchpad = nil;
+    [_starWorldButton release];
+    [_tapTapWhiteButton release];
     [super dealloc];
 }
 
@@ -290,6 +292,8 @@ CGFloat degreesToRadians(CGFloat degrees);
     m_dimmer = nil;
     [m_torchButton release];
     m_torchButton = nil;
+    [self setStarWorldButton:nil];
+    [self setTapTapWhiteButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -588,6 +592,22 @@ CGFloat degreesToRadians(CGFloat degrees)
     //NSLog(@"pos:%.0f      alpha: %.2f", handleX, newDimmerAlpha);
     
     self.lightContainer.alpha = newDimmerAlpha;
+    
+    if (handleX < 25)
+    {
+        // StarWorld button mode.
+        
+        self.lightContainer.hidden = YES;
+        self.starWorldButton.hidden = NO;
+        self.tapTapWhiteButton.hidden = YES;
+    }
+    else
+    {
+        self.lightContainer.hidden = NO;
+        self.starWorldButton.hidden = YES;
+        self.tapTapWhiteButton.hidden = NO;
+    }
+    
 }
 
 - (IBAction)onDimmerPan:(UIPanGestureRecognizer *)recognizer

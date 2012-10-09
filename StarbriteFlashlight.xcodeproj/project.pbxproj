@@ -86,6 +86,8 @@
 		A6775C0E162499A700F70E46 /* SunLight_281x281.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775C04162499A700F70E46 /* SunLight_281x281.png */; };
 		A6775C0F162499A700F70E46 /* SunLight_281x281@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775C05162499A700F70E46 /* SunLight_281x281@2x.png */; };
 		A6775C1016249A1200F70E46 /* CrystalGlass.wav in Resources */ = {isa = PBXBuildFile; fileRef = A63E0D8F1479FD7900D331E2 /* CrystalGlass.wav */; };
+		A6775C131624A40000F70E46 /* TapTap_White_74x21.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775C111624A40000F70E46 /* TapTap_White_74x21.png */; };
+		A6775C141624A40000F70E46 /* TapTap_White_74x21@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775C121624A40000F70E46 /* TapTap_White_74x21@2x.png */; };
 		A6894AE1147091D000DBDAA4 /* 3dar.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6894ACC147091D000DBDAA4 /* 3dar.plist */; };
 		A6894AE2147091D000DBDAA4 /* 3dar_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A6894ACF147091D000DBDAA4 /* 3dar_logo.png */; };
 		A6894AE3147091D000DBDAA4 /* 3dar_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6894AD0147091D000DBDAA4 /* 3dar_logo@2x.png */; };
@@ -225,6 +227,8 @@
 		A6775C03162499A700F70E46 /* SunDark_281x281@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SunDark_281x281@2x.png"; sourceTree = "<group>"; };
 		A6775C04162499A700F70E46 /* SunLight_281x281.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SunLight_281x281.png; sourceTree = "<group>"; };
 		A6775C05162499A700F70E46 /* SunLight_281x281@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SunLight_281x281@2x.png"; sourceTree = "<group>"; };
+		A6775C111624A40000F70E46 /* TapTap_White_74x21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TapTap_White_74x21.png; sourceTree = "<group>"; };
+		A6775C121624A40000F70E46 /* TapTap_White_74x21@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TapTap_White_74x21@2x.png"; sourceTree = "<group>"; };
 		A6894ACC147091D000DBDAA4 /* 3dar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 3dar.plist; sourceTree = "<group>"; };
 		A6894ACF147091D000DBDAA4 /* 3dar_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3dar_logo.png; sourceTree = "<group>"; };
 		A6894AD0147091D000DBDAA4 /* 3dar_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3dar_logo@2x.png"; sourceTree = "<group>"; };
@@ -539,6 +543,8 @@
 				A6775C05162499A700F70E46 /* SunLight_281x281@2x.png */,
 				A6894B141470A87F00DBDAA4 /* taptap.png */,
 				A6894B151470A87F00DBDAA4 /* taptap@2x.png */,
+				A6775C111624A40000F70E46 /* TapTap_White_74x21.png */,
+				A6775C121624A40000F70E46 /* TapTap_White_74x21@2x.png */,
 				A6B8CFA914BAD69900FA8483 /* WorldAtNight.jpg */,
 			);
 			name = Assets;
@@ -717,6 +723,8 @@
 				A6775C0E162499A700F70E46 /* SunLight_281x281.png in Resources */,
 				A6775C0F162499A700F70E46 /* SunLight_281x281@2x.png in Resources */,
 				A6775C1016249A1200F70E46 /* CrystalGlass.wav in Resources */,
+				A6775C131624A40000F70E46 /* TapTap_White_74x21.png in Resources */,
+				A6775C141624A40000F70E46 /* TapTap_White_74x21@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
