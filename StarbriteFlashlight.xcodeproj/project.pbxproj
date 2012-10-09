@@ -125,6 +125,8 @@
 		A6894B33147106AD00DBDAA4 /* planet1.png in Resources */ = {isa = PBXBuildFile; fileRef = A6894B30147106AD00DBDAA4 /* planet1.png */; };
 		A68F050415D078900023F961 /* CloseButton_27x27.png in Resources */ = {isa = PBXBuildFile; fileRef = A68F050215D078900023F961 /* CloseButton_27x27.png */; };
 		A68F050515D078900023F961 /* CloseButton_27x27@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A68F050315D078900023F961 /* CloseButton_27x27@2x.png */; };
+		A69A97731621053D002CE875 /* dimmer_bar_280x15@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A69A97721621053D002CE875 /* dimmer_bar_280x15@2x.png */; };
+		A69A977616210570002CE875 /* dimmer_bar_280x15.png in Resources */ = {isa = PBXBuildFile; fileRef = A69A977516210570002CE875 /* dimmer_bar_280x15.png */; };
 		A6B8CFAD14BAD75400FA8483 /* PlanetView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B8CFAC14BAD75400FA8483 /* PlanetView.m */; };
 /* End PBXBuildFile section */
 
@@ -262,6 +264,8 @@
 		A6894B30147106AD00DBDAA4 /* planet1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planet1.png; sourceTree = "<group>"; };
 		A68F050215D078900023F961 /* CloseButton_27x27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseButton_27x27.png; sourceTree = "<group>"; };
 		A68F050315D078900023F961 /* CloseButton_27x27@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseButton_27x27@2x.png"; sourceTree = "<group>"; };
+		A69A97721621053D002CE875 /* dimmer_bar_280x15@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dimmer_bar_280x15@2x.png"; sourceTree = "<group>"; };
+		A69A977516210570002CE875 /* dimmer_bar_280x15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dimmer_bar_280x15.png; sourceTree = "<group>"; };
 		A6B8CFA914BAD69900FA8483 /* WorldAtNight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WorldAtNight.jpg; sourceTree = "<group>"; };
 		A6B8CFAB14BAD75400FA8483 /* PlanetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetView.h; sourceTree = "<group>"; };
 		A6B8CFAC14BAD75400FA8483 /* PlanetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetView.m; sourceTree = "<group>"; };
@@ -504,6 +508,8 @@
 				A63E0D8F1479FD7900D331E2 /* CrystalGlass.wav */,
 				A6894B031470A80A00DBDAA4 /* Default.png */,
 				A6894B041470A80A00DBDAA4 /* Default@2x.png */,
+				A69A977516210570002CE875 /* dimmer_bar_280x15.png */,
+				A69A97721621053D002CE875 /* dimmer_bar_280x15@2x.png */,
 				A6169E8914BA5D33006A74C8 /* DudeDown150.png */,
 				A6169E8A14BA5D33006A74C8 /* DudeDown150@2x.png */,
 				A6169E8B14BA5D33006A74C8 /* DudeUp150.png */,
@@ -578,7 +584,7 @@
 		A641E9FE1466F6B80009772B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = A641EA011466F6B80009772B /* Build configuration list for PBXProject "StarbriteFlashlight" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -697,6 +703,8 @@
 				A618BBEB1608537700755CE7 /* f_taptap.png in Resources */,
 				A618BBEC1608537700755CE7 /* f_title.png in Resources */,
 				A618BBED1608537700755CE7 /* f_WritingDimmerSwitch.png in Resources */,
+				A69A97731621053D002CE875 /* dimmer_bar_280x15@2x.png in Resources */,
+				A69A977616210570002CE875 /* dimmer_bar_280x15.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

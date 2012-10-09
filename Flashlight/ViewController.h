@@ -19,7 +19,7 @@ typedef enum
     RunModeSoundOn = 4
 } RunMode;
 
-@interface ViewController : UIViewController <SM3DARDelegate>
+@interface ViewController : UIViewController <SM3DARDelegate, UIGestureRecognizerDelegate>
 {
     RunMode runMode;
     AVCaptureSession *captureSession;
@@ -37,10 +37,15 @@ typedef enum
 
 @property (nonatomic, retain) AVCaptureSession *captureSession;
 @property (nonatomic, retain) AVCaptureDevice *captureDevice;
+@property (nonatomic, retain) IBOutlet UIView *lightContainer;
+@property (nonatomic, retain) IBOutlet UIView *darkContainer;
+@property (nonatomic, retain) IBOutlet UIImageView *dimmerHandle;
+@property (nonatomic, retain) IBOutlet UIView *dimmerTouchpad;
 
 - (void)toggleTorchState;
 - (void)toggleTorch:(BOOL)torchOn;
 - (IBAction)beginMentalIllumination:(id)sender;
 - (IBAction)closeButtonTapped:(id)sender;
+- (IBAction)onDimmerPan:(UIPanGestureRecognizer *)recognizer;
 
 @end

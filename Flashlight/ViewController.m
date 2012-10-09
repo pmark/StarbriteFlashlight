@@ -27,7 +27,9 @@ CGFloat degreesToRadians(CGFloat degrees);
 
 @synthesize captureSession;
 @synthesize captureDevice;
-
+@synthesize lightContainer = _lightContainer;
+@synthesize dimmerHandle = _dimmerHandle;
+@synthesize dimmerTouchpad = _dimmerTouchpad;
 
 - (void)dealloc 
 {
@@ -41,6 +43,9 @@ CGFloat degreesToRadians(CGFloat degrees);
     [m_starInstructions release];
     [m_dimmer release];
     [m_torchButton release];
+    self.lightContainer = nil;
+    self.dimmerHandle = nil;
+    self.dimmerTouchpad = nil;
     [super dealloc];
 }
 
@@ -181,12 +186,9 @@ CGFloat degreesToRadians(CGFloat degrees);
 {
     _sm3dar.hudView = hudView;
     
-    NSDictionary *d = [NSDictionary dictionary];
-    
-    NSLog(@"\n\nDict: %@", [d jsonStringValue]);
-
     _sm3dar.view.hidden = YES;
     [self.view insertSubview:_sm3dar.view atIndex:0];
+    [self.view bringSubviewToFront:self.dimmerTouchpad];
 }
 
 - (void) sm3dar:(SM3DARController *)sm3dar didChangeFocusToPOI:(SM3DARPoint*)newPOI fromPOI:(SM3DARPoint*)oldPOI
@@ -478,6 +480,7 @@ CGFloat degreesToRadians(CGFloat degrees)
 {
     APP_DELEGATE.sm3dar = _sm3dar;
     APP_DELEGATE.sm3dar.focusView = nil;
+    APP_DELEGATE.sm3dar.glViewEnabled = NO;
 
     [self setupScene];
 }
@@ -492,6 +495,8 @@ CGFloat degreesToRadians(CGFloat degrees)
 - (IBAction)beginMentalIllumination:(id)sender 
 {
     [APP_DELEGATE playClickSound];
+    
+    APP_DELEGATE.sm3dar.glViewEnabled = YES;
     
     [self startAmbientSounds];
     
@@ -519,6 +524,7 @@ CGFloat degreesToRadians(CGFloat degrees)
     
     APP_DELEGATE.sm3dar.view.hidden = YES;
     [APP_DELEGATE.sm3dar suspend];
+    APP_DELEGATE.sm3dar.glViewEnabled = NO;
     [soundEnvironment stopPlaybackForCurrentPlayer];
 
     [self.view bringSubviewToFront:menuContainer];
@@ -530,10 +536,89 @@ CGFloat degreesToRadians(CGFloat degrees)
     [self exitStarMode];
 }
 
+/*
+
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [APP_DELEGATE playClickSound];
-    [self toggleTorchState];
+}
+*/
+
+- (void)setDimmerFromTouchX:(CGFloat)touchX
+{
+//    NSLog(@"touchX: %.0f", touchX);
+    
+    CGFloat barWidth = 280.0;
+    CGFloat barPadding = 20.0;
+    CGFloat leftBorder = barPadding;
+    CGFloat rightBorder = (self.view.frame.size.width-barPadding);
+    CGFloat handleX;
+    
+    if (touchX < leftBorder)
+    {
+        handleX = 0;
+    }
+    else if (touchX > rightBorder)
+    {
+        handleX = barWidth;
+    }
+    else
+    {
+        handleX = touchX - barPadding;
+    }
+    
+    
+    // Move handle.
+    
+    CGPoint p = self.dimmerHandle.center;
+    p.x = handleX + barPadding;
+    self.dimmerHandle.center = p;
+    
+    
+    // Set alpha.
+    
+    CGFloat newDimmerAlpha = (handleX / barWidth);
+    //NSLog(@"pos:%.0f      alpha: %.2f", handleX, newDimmerAlpha);
+    
+    self.lightContainer.alpha = newDimmerAlpha;
+}
+
+- (IBAction)onDimmerPan:(UIPanGestureRecognizer *)recognizer
+{
+    CGPoint translation = [recognizer translationInView:m_dimmer];
+    CGFloat touchX = (m_firstTouch.x + translation.x);
+    [self setDimmerFromTouchX:touchX];
+}
+
+CGPoint m_firstTouch;
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    
+    NSInteger tapCount = [[touches anyObject] tapCount];
+    
+    if (tapCount > 1)
+    {
+        [APP_DELEGATE playClickSound];
+        [self toggleTorchState];
+    }
+    else
+    {
+        m_firstTouch = [touch locationInView:self.view];
+        
+        if (m_firstTouch.y >= self.dimmerTouchpad.frame.origin.y)
+        {
+            [self setDimmerFromTouchX:m_firstTouch.x];
+        }
+        
+    }
+    
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    m_firstTouch = [touch locationInView:self.dimmerTouchpad];
+    [self setDimmerFromTouchX:m_firstTouch.x];
 }
 
 @end

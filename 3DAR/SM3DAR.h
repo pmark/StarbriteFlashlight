@@ -206,6 +206,7 @@ typedef enum
 @property (nonatomic, retain) NSObject<SM3DARFocusDelegate> *focusView;
 @property (nonatomic, assign) CGFloat screenOrientationRadians;
 @property (nonatomic, retain) UIView *glView;
+@property (nonatomic, assign) BOOL glViewEnabled;
 @property (nonatomic, retain) UIView *hudView;
 @property (nonatomic, retain) UIView *compassView;
 @property (nonatomic, assign) CGFloat nearClipMeters;
