@@ -21,15 +21,6 @@
 		A618BBD31608377B00755CE7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A618BBD21608377B00755CE7 /* Default-568h@2x.png */; };
 		A618BBD91608416A00755CE7 /* EarthView.m in Sources */ = {isa = PBXBuildFile; fileRef = A618BBD81608416A00755CE7 /* EarthView.m */; };
 		A618BBDB1608480A00755CE7 /* SkyImage1024x512.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A618BBDA1608480A00755CE7 /* SkyImage1024x512.jpg */; };
-		A618BBE51608537700755CE7 /* f_background.png in Resources */ = {isa = PBXBuildFile; fileRef = A618BBDC1608537700755CE7 /* f_background.png */; };
-		A618BBE61608537700755CE7 /* f_DimmerBar.png in Resources */ = {isa = PBXBuildFile; fileRef = A618BBDD1608537700755CE7 /* f_DimmerBar.png */; };
-		A618BBE71608537700755CE7 /* f_DimmerSwitch.png in Resources */ = {isa = PBXBuildFile; fileRef = A618BBDE1608537700755CE7 /* f_DimmerSwitch.png */; };
-		A618BBE81608537700755CE7 /* f_directions.png in Resources */ = {isa = PBXBuildFile; fileRef = A618BBDF1608537700755CE7 /* f_directions.png */; };
-		A618BBE91608537700755CE7 /* f_HandDown.png in Resources */ = {isa = PBXBuildFile; fileRef = A618BBE01608537700755CE7 /* f_HandDown.png */; };
-		A618BBEA1608537700755CE7 /* f_handup.png in Resources */ = {isa = PBXBuildFile; fileRef = A618BBE11608537700755CE7 /* f_handup.png */; };
-		A618BBEB1608537700755CE7 /* f_taptap.png in Resources */ = {isa = PBXBuildFile; fileRef = A618BBE21608537700755CE7 /* f_taptap.png */; };
-		A618BBEC1608537700755CE7 /* f_title.png in Resources */ = {isa = PBXBuildFile; fileRef = A618BBE31608537700755CE7 /* f_title.png */; };
-		A618BBED1608537700755CE7 /* f_WritingDimmerSwitch.png in Resources */ = {isa = PBXBuildFile; fileRef = A618BBE41608537700755CE7 /* f_WritingDimmerSwitch.png */; };
 		A634688A14AC35C100D68AAF /* quotation1.png in Resources */ = {isa = PBXBuildFile; fileRef = A634686C14AC35C100D68AAF /* quotation1.png */; };
 		A634688B14AC35C100D68AAF /* quotation10.png in Resources */ = {isa = PBXBuildFile; fileRef = A634686D14AC35C100D68AAF /* quotation10.png */; };
 		A634688C14AC35C100D68AAF /* quotation10@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A634686E14AC35C100D68AAF /* quotation10@2x.png */; };
@@ -61,7 +52,6 @@
 		A63468A614AC35C100D68AAF /* quotation9.png in Resources */ = {isa = PBXBuildFile; fileRef = A634688814AC35C100D68AAF /* quotation9.png */; };
 		A63468A714AC35C100D68AAF /* quotation9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A634688914AC35C100D68AAF /* quotation9@2x.png */; };
 		A63E0D871479FB3300D331E2 /* Click.wav in Resources */ = {isa = PBXBuildFile; fileRef = A63E0D861479FB3300D331E2 /* Click.wav */; };
-		A63E0D901479FD7900D331E2 /* CrystalGlass.wav in Resources */ = {isa = PBXBuildFile; fileRef = A63E0D8F1479FD7900D331E2 /* CrystalGlass.wav */; };
 		A63E0D99147A04DC00D331E2 /* CrystalGlassA.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A63E0D92147A04DC00D331E2 /* CrystalGlassA.mp3 */; };
 		A63E0D9A147A04DC00D331E2 /* CrystalGlassB.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A63E0D93147A04DC00D331E2 /* CrystalGlassB.mp3 */; };
 		A63E0D9B147A04DC00D331E2 /* CrystalGlassC.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A63E0D94147A04DC00D331E2 /* CrystalGlassC.mp3 */; };
@@ -85,6 +75,17 @@
 		A641EA35146701000009772B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A641EA33146701000009772B /* Icon.png */; };
 		A6775BFA16248F3400F70E46 /* polaris.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775BF816248F3400F70E46 /* polaris.png */; };
 		A6775BFB16248F3400F70E46 /* polaris@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775BF916248F3400F70E46 /* polaris@2x.png */; };
+		A6775C06162499A700F70E46 /* DimmerBar_267x8.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775BFC162499A700F70E46 /* DimmerBar_267x8.png */; };
+		A6775C07162499A700F70E46 /* DimmerBar_267x8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775BFD162499A700F70E46 /* DimmerBar_267x8@2x.png */; };
+		A6775C08162499A700F70E46 /* Rabbit_80x56.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775BFE162499A700F70E46 /* Rabbit_80x56.png */; };
+		A6775C09162499A700F70E46 /* Rabbit_80x56@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775BFF162499A700F70E46 /* Rabbit_80x56@2x.png */; };
+		A6775C0A162499A700F70E46 /* StarWorld_63x52.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775C00162499A700F70E46 /* StarWorld_63x52.png */; };
+		A6775C0B162499A700F70E46 /* StarWorld_63x52@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775C01162499A700F70E46 /* StarWorld_63x52@2x.png */; };
+		A6775C0C162499A700F70E46 /* SunDark_281x281.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775C02162499A700F70E46 /* SunDark_281x281.png */; };
+		A6775C0D162499A700F70E46 /* SunDark_281x281@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775C03162499A700F70E46 /* SunDark_281x281@2x.png */; };
+		A6775C0E162499A700F70E46 /* SunLight_281x281.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775C04162499A700F70E46 /* SunLight_281x281.png */; };
+		A6775C0F162499A700F70E46 /* SunLight_281x281@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775C05162499A700F70E46 /* SunLight_281x281@2x.png */; };
+		A6775C1016249A1200F70E46 /* CrystalGlass.wav in Resources */ = {isa = PBXBuildFile; fileRef = A63E0D8F1479FD7900D331E2 /* CrystalGlass.wav */; };
 		A6894AE1147091D000DBDAA4 /* 3dar.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6894ACC147091D000DBDAA4 /* 3dar.plist */; };
 		A6894AE2147091D000DBDAA4 /* 3dar_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A6894ACF147091D000DBDAA4 /* 3dar_logo.png */; };
 		A6894AE3147091D000DBDAA4 /* 3dar_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6894AD0147091D000DBDAA4 /* 3dar_logo@2x.png */; };
@@ -154,15 +155,6 @@
 		A618BBD71608416A00755CE7 /* EarthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EarthView.h; sourceTree = "<group>"; };
 		A618BBD81608416A00755CE7 /* EarthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EarthView.m; sourceTree = "<group>"; };
 		A618BBDA1608480A00755CE7 /* SkyImage1024x512.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SkyImage1024x512.jpg; sourceTree = "<group>"; };
-		A618BBDC1608537700755CE7 /* f_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_background.png; sourceTree = "<group>"; };
-		A618BBDD1608537700755CE7 /* f_DimmerBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_DimmerBar.png; sourceTree = "<group>"; };
-		A618BBDE1608537700755CE7 /* f_DimmerSwitch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_DimmerSwitch.png; sourceTree = "<group>"; };
-		A618BBDF1608537700755CE7 /* f_directions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_directions.png; sourceTree = "<group>"; };
-		A618BBE01608537700755CE7 /* f_HandDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_HandDown.png; sourceTree = "<group>"; };
-		A618BBE11608537700755CE7 /* f_handup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_handup.png; sourceTree = "<group>"; };
-		A618BBE21608537700755CE7 /* f_taptap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_taptap.png; sourceTree = "<group>"; };
-		A618BBE31608537700755CE7 /* f_title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_title.png; sourceTree = "<group>"; };
-		A618BBE41608537700755CE7 /* f_WritingDimmerSwitch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_WritingDimmerSwitch.png; sourceTree = "<group>"; };
 		A634686C14AC35C100D68AAF /* quotation1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quotation1.png; sourceTree = "<group>"; };
 		A634686D14AC35C100D68AAF /* quotation10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quotation10.png; sourceTree = "<group>"; };
 		A634686E14AC35C100D68AAF /* quotation10@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quotation10@2x.png"; sourceTree = "<group>"; };
@@ -223,6 +215,16 @@
 		A641EA33146701000009772B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		A6775BF816248F3400F70E46 /* polaris.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polaris.png; sourceTree = "<group>"; };
 		A6775BF916248F3400F70E46 /* polaris@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "polaris@2x.png"; sourceTree = "<group>"; };
+		A6775BFC162499A700F70E46 /* DimmerBar_267x8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DimmerBar_267x8.png; sourceTree = "<group>"; };
+		A6775BFD162499A700F70E46 /* DimmerBar_267x8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DimmerBar_267x8@2x.png"; sourceTree = "<group>"; };
+		A6775BFE162499A700F70E46 /* Rabbit_80x56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rabbit_80x56.png; sourceTree = "<group>"; };
+		A6775BFF162499A700F70E46 /* Rabbit_80x56@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rabbit_80x56@2x.png"; sourceTree = "<group>"; };
+		A6775C00162499A700F70E46 /* StarWorld_63x52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarWorld_63x52.png; sourceTree = "<group>"; };
+		A6775C01162499A700F70E46 /* StarWorld_63x52@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarWorld_63x52@2x.png"; sourceTree = "<group>"; };
+		A6775C02162499A700F70E46 /* SunDark_281x281.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SunDark_281x281.png; sourceTree = "<group>"; };
+		A6775C03162499A700F70E46 /* SunDark_281x281@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SunDark_281x281@2x.png"; sourceTree = "<group>"; };
+		A6775C04162499A700F70E46 /* SunLight_281x281.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SunLight_281x281.png; sourceTree = "<group>"; };
+		A6775C05162499A700F70E46 /* SunLight_281x281@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SunLight_281x281@2x.png"; sourceTree = "<group>"; };
 		A6894ACC147091D000DBDAA4 /* 3dar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 3dar.plist; sourceTree = "<group>"; };
 		A6894ACF147091D000DBDAA4 /* 3dar_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3dar_logo.png; sourceTree = "<group>"; };
 		A6894AD0147091D000DBDAA4 /* 3dar_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3dar_logo@2x.png"; sourceTree = "<group>"; };
@@ -506,8 +508,6 @@
 		A6894B021470A80A00DBDAA4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				A6775BF816248F3400F70E46 /* polaris.png */,
-				A6775BF916248F3400F70E46 /* polaris@2x.png */,
 				A63E0D861479FB3300D331E2 /* Click.wav */,
 				A68F050215D078900023F961 /* CloseButton_27x27.png */,
 				A68F050315D078900023F961 /* CloseButton_27x27@2x.png */,
@@ -516,27 +516,30 @@
 				A6894B041470A80A00DBDAA4 /* Default@2x.png */,
 				A69A977516210570002CE875 /* dimmer_bar_280x15.png */,
 				A69A97721621053D002CE875 /* dimmer_bar_280x15@2x.png */,
+				A6775BFC162499A700F70E46 /* DimmerBar_267x8.png */,
+				A6775BFD162499A700F70E46 /* DimmerBar_267x8@2x.png */,
 				A6169E8914BA5D33006A74C8 /* DudeDown150.png */,
 				A6169E8A14BA5D33006A74C8 /* DudeDown150@2x.png */,
 				A6169E8B14BA5D33006A74C8 /* DudeUp150.png */,
 				A6169E8C14BA5D33006A74C8 /* DudeUp150@2x.png */,
-				A618BBDC1608537700755CE7 /* f_background.png */,
-				A618BBDD1608537700755CE7 /* f_DimmerBar.png */,
-				A618BBDE1608537700755CE7 /* f_DimmerSwitch.png */,
-				A618BBDF1608537700755CE7 /* f_directions.png */,
-				A618BBE01608537700755CE7 /* f_HandDown.png */,
-				A618BBE11608537700755CE7 /* f_handup.png */,
-				A618BBE21608537700755CE7 /* f_taptap.png */,
-				A618BBE31608537700755CE7 /* f_title.png */,
-				A618BBE41608537700755CE7 /* f_WritingDimmerSwitch.png */,
+				A63E0D91147A04DC00D331E2 /* Glass */,
+				A6775BF816248F3400F70E46 /* polaris.png */,
+				A6775BF916248F3400F70E46 /* polaris@2x.png */,
+				A634686B14AC35C100D68AAF /* quotations */,
+				A6775BFE162499A700F70E46 /* Rabbit_80x56.png */,
+				A6775BFF162499A700F70E46 /* Rabbit_80x56@2x.png */,
 				A618BBDA1608480A00755CE7 /* SkyImage1024x512.jpg */,
 				A63E0DA6147A177200D331E2 /* space1.m4a */,
+				A6894B051470A80A00DBDAA4 /* stars */,
+				A6775C00162499A700F70E46 /* StarWorld_63x52.png */,
+				A6775C01162499A700F70E46 /* StarWorld_63x52@2x.png */,
+				A6775C02162499A700F70E46 /* SunDark_281x281.png */,
+				A6775C03162499A700F70E46 /* SunDark_281x281@2x.png */,
+				A6775C04162499A700F70E46 /* SunLight_281x281.png */,
+				A6775C05162499A700F70E46 /* SunLight_281x281@2x.png */,
 				A6894B141470A87F00DBDAA4 /* taptap.png */,
 				A6894B151470A87F00DBDAA4 /* taptap@2x.png */,
 				A6B8CFA914BAD69900FA8483 /* WorldAtNight.jpg */,
-				A634686B14AC35C100D68AAF /* quotations */,
-				A63E0D91147A04DC00D331E2 /* Glass */,
-				A6894B051470A80A00DBDAA4 /* stars */,
 			);
 			name = Assets;
 			path = Flashlight/Assets;
@@ -653,7 +656,6 @@
 				A6894B33147106AD00DBDAA4 /* planet1.png in Resources */,
 				A60678281479CDB6008F8AF3 /* 3dar_pano_bg.jpg in Resources */,
 				A63E0D871479FB3300D331E2 /* Click.wav in Resources */,
-				A63E0D901479FD7900D331E2 /* CrystalGlass.wav in Resources */,
 				A63E0D99147A04DC00D331E2 /* CrystalGlassA.mp3 in Resources */,
 				A63E0D9A147A04DC00D331E2 /* CrystalGlassB.mp3 in Resources */,
 				A63E0D9B147A04DC00D331E2 /* CrystalGlassC.mp3 in Resources */,
@@ -700,19 +702,21 @@
 				A68F050515D078900023F961 /* CloseButton_27x27@2x.png in Resources */,
 				A618BBD31608377B00755CE7 /* Default-568h@2x.png in Resources */,
 				A618BBDB1608480A00755CE7 /* SkyImage1024x512.jpg in Resources */,
-				A618BBE51608537700755CE7 /* f_background.png in Resources */,
-				A618BBE61608537700755CE7 /* f_DimmerBar.png in Resources */,
-				A618BBE71608537700755CE7 /* f_DimmerSwitch.png in Resources */,
-				A618BBE81608537700755CE7 /* f_directions.png in Resources */,
-				A618BBE91608537700755CE7 /* f_HandDown.png in Resources */,
-				A618BBEA1608537700755CE7 /* f_handup.png in Resources */,
-				A618BBEB1608537700755CE7 /* f_taptap.png in Resources */,
-				A618BBEC1608537700755CE7 /* f_title.png in Resources */,
-				A618BBED1608537700755CE7 /* f_WritingDimmerSwitch.png in Resources */,
 				A69A97731621053D002CE875 /* dimmer_bar_280x15@2x.png in Resources */,
 				A69A977616210570002CE875 /* dimmer_bar_280x15.png in Resources */,
 				A6775BFA16248F3400F70E46 /* polaris.png in Resources */,
 				A6775BFB16248F3400F70E46 /* polaris@2x.png in Resources */,
+				A6775C06162499A700F70E46 /* DimmerBar_267x8.png in Resources */,
+				A6775C07162499A700F70E46 /* DimmerBar_267x8@2x.png in Resources */,
+				A6775C08162499A700F70E46 /* Rabbit_80x56.png in Resources */,
+				A6775C09162499A700F70E46 /* Rabbit_80x56@2x.png in Resources */,
+				A6775C0A162499A700F70E46 /* StarWorld_63x52.png in Resources */,
+				A6775C0B162499A700F70E46 /* StarWorld_63x52@2x.png in Resources */,
+				A6775C0C162499A700F70E46 /* SunDark_281x281.png in Resources */,
+				A6775C0D162499A700F70E46 /* SunDark_281x281@2x.png in Resources */,
+				A6775C0E162499A700F70E46 /* SunLight_281x281.png in Resources */,
+				A6775C0F162499A700F70E46 /* SunLight_281x281@2x.png in Resources */,
+				A6775C1016249A1200F70E46 /* CrystalGlass.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

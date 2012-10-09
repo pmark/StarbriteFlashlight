@@ -9,8 +9,11 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
-@interface AppDelegate (Private) 
--(void)setupAudio;
+@interface AppDelegate ()
+{
+    AVAudioPlayer *clickSound;
+    AVAudioPlayer *chimeSound;
+}
 @end
 
 
@@ -40,7 +43,7 @@
     }
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
+    
     self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
@@ -96,11 +99,20 @@
     NSURL *url = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"Click" ofType:@"wav"]];
     clickSound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [clickSound prepareToPlay];
+    
+    url = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"CrystalGlass" ofType:@"wav"]];
+    chimeSound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [chimeSound prepareToPlay];
 }
 
 - (void)playClickSound
 {
     [clickSound play];
+}
+
+- (void)playChimeSound
+{
+    [chimeSound play];
 }
 
 @end

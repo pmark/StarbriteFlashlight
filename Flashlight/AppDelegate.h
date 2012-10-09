@@ -13,15 +13,14 @@
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-{
-    AVAudioPlayer *clickSound;
-}
+{}
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ViewController *viewController;
 @property (strong, nonatomic) SM3DARController *sm3dar;
 
 - (void)playClickSound;
+- (void)playChimeSound;
 
 @end
 

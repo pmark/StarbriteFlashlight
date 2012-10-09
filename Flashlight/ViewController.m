@@ -487,7 +487,7 @@ CGFloat degreesToRadians(CGFloat degrees)
 
 - (IBAction)beginMentalIllumination:(id)sender 
 {
-    [APP_DELEGATE playClickSound];
+    [APP_DELEGATE playChimeSound];
     
     APP_DELEGATE.sm3dar.glViewEnabled = YES;
     
@@ -525,7 +525,7 @@ CGFloat degreesToRadians(CGFloat degrees)
 
 - (IBAction)closeButtonTapped:(id)sender 
 {
-    [APP_DELEGATE playClickSound];
+//    [APP_DELEGATE playClickSound];
     [self exitStarMode];
 }
 
