@@ -621,17 +621,25 @@ CGFloat degreesToRadians(CGFloat degrees)
         // StarWorld button mode.
         
         self.lightContainer.hidden = YES;
-        self.starWorldButton.hidden = NO;
-        self.tapTapWhiteButton.hidden = YES;
+        [self setStarWorldButtonHidden:NO];
     }
     else
     {
         self.lightContainer.hidden = NO;
-        self.starWorldButton.hidden = YES;
-        self.tapTapWhiteButton.hidden = NO;
+        [self setStarWorldButtonHidden:YES];
     }
-    
-    
+}
+
+- (void)setStarWorldButtonHidden:(BOOL)hidden
+{
+    CGFloat alpha = (hidden ? 0.0 : 1.0);
+
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.25];
+    self.starWorldButton.alpha = alpha;
+    self.tapTapWhiteButton.alpha = (1.0 - alpha);
+    [UIView commitAnimations];
+
 }
 
 - (IBAction)onDimmerPan:(UIPanGestureRecognizer *)recognizer
