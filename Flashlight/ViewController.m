@@ -324,10 +324,25 @@ CGFloat degreesToRadians(CGFloat degrees);
 	[super viewDidDisappear:animated];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+//{
+//    // Return YES for supported orientations
+//    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+//}
+
+-(BOOL)shouldAutorotate
 {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return NO;
+}
+
+-(NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 - (SM3DARPoint*) addOneStar:(NSString*)starTitle coord:(Coord3D)coord
