@@ -465,24 +465,17 @@ CGFloat degreesToRadians(CGFloat degrees)
     APP_DELEGATE.sm3dar.backgroundPoint = sky;
 }
 
-- (void) setupScene
-{
-    NSLog(@"Loading sky");
-    [self addSkyPano];
-
-    NSLog(@"Loading stars");
-    [self addStars];
-    
-    [self addPlanetoids];
-}
-
 - (void) sm3darLoadPoints:(SM3DARController *)_sm3dar
 {
     APP_DELEGATE.sm3dar = _sm3dar;
     APP_DELEGATE.sm3dar.focusView = nil;
     APP_DELEGATE.sm3dar.glViewEnabled = NO;
 
-    [self setupScene];
+    NSLog(@"Adding 3DAR points.");
+    [self addSkyPano];
+    [self addPlanetoids];
+    [self addNorthStar];
+    [self addStars];
 }
 
 - (void) startAmbientSounds
@@ -619,6 +612,22 @@ CGPoint m_firstTouch;
     UITouch *touch = [touches anyObject];
     m_firstTouch = [touch locationInView:self.dimmerTouchpad];
     [self setDimmerFromTouchX:m_firstTouch.x];
+}
+
+- (void)addNorthStar
+{
+    SM3DARPoint *point = [[SM3DARFixture alloc] init];
+
+    Coord3D northCoord;
+    northCoord.x = 0;
+    northCoord.y = 13001;
+    northCoord.z = 5000;
+    point.worldPoint = northCoord;
+    
+    point.canReceiveFocus = NO;
+    point.view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"polaris.png"]];
+
+    [APP_DELEGATE.sm3dar addPoint:point];
 }
 
 @end

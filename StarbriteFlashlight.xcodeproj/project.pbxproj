@@ -83,6 +83,8 @@
 		A641EA2D1466F9020009772B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A641EA2C1466F9020009772B /* AVFoundation.framework */; };
 		A641EA34146701000009772B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A641EA32146701000009772B /* Icon@2x.png */; };
 		A641EA35146701000009772B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A641EA33146701000009772B /* Icon.png */; };
+		A6775BFA16248F3400F70E46 /* polaris.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775BF816248F3400F70E46 /* polaris.png */; };
+		A6775BFB16248F3400F70E46 /* polaris@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6775BF916248F3400F70E46 /* polaris@2x.png */; };
 		A6894AE1147091D000DBDAA4 /* 3dar.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6894ACC147091D000DBDAA4 /* 3dar.plist */; };
 		A6894AE2147091D000DBDAA4 /* 3dar_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A6894ACF147091D000DBDAA4 /* 3dar_logo.png */; };
 		A6894AE3147091D000DBDAA4 /* 3dar_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6894AD0147091D000DBDAA4 /* 3dar_logo@2x.png */; };
@@ -219,6 +221,8 @@
 		A641EA2C1466F9020009772B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A641EA32146701000009772B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		A641EA33146701000009772B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		A6775BF816248F3400F70E46 /* polaris.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polaris.png; sourceTree = "<group>"; };
+		A6775BF916248F3400F70E46 /* polaris@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "polaris@2x.png"; sourceTree = "<group>"; };
 		A6894ACC147091D000DBDAA4 /* 3dar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 3dar.plist; sourceTree = "<group>"; };
 		A6894ACF147091D000DBDAA4 /* 3dar_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3dar_logo.png; sourceTree = "<group>"; };
 		A6894AD0147091D000DBDAA4 /* 3dar_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3dar_logo@2x.png"; sourceTree = "<group>"; };
@@ -502,6 +506,8 @@
 		A6894B021470A80A00DBDAA4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				A6775BF816248F3400F70E46 /* polaris.png */,
+				A6775BF916248F3400F70E46 /* polaris@2x.png */,
 				A63E0D861479FB3300D331E2 /* Click.wav */,
 				A68F050215D078900023F961 /* CloseButton_27x27.png */,
 				A68F050315D078900023F961 /* CloseButton_27x27@2x.png */,
@@ -705,6 +711,8 @@
 				A618BBED1608537700755CE7 /* f_WritingDimmerSwitch.png in Resources */,
 				A69A97731621053D002CE875 /* dimmer_bar_280x15@2x.png in Resources */,
 				A69A977616210570002CE875 /* dimmer_bar_280x15.png in Resources */,
+				A6775BFA16248F3400F70E46 /* polaris.png in Resources */,
+				A6775BFB16248F3400F70E46 /* polaris@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
