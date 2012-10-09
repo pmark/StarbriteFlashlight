@@ -19,6 +19,9 @@
 CGFloat degreesToRadians(CGFloat degrees);
 
 @interface ViewController ()
+{
+    CGFloat _dimmerHandleOriginalY;
+}
 - (void)setupTorch;
 @end
 
@@ -191,6 +194,7 @@ CGFloat degreesToRadians(CGFloat degrees);
     _sm3dar.view.hidden = YES;
     [self.view insertSubview:_sm3dar.view atIndex:0];
     [self.view bringSubviewToFront:self.dimmerTouchpad];
+
 }
 
 - (void) sm3dar:(SM3DARController *)sm3dar didChangeFocusToPOI:(SM3DARPoint*)newPOI fromPOI:(SM3DARPoint*)oldPOI
@@ -274,6 +278,9 @@ CGFloat degreesToRadians(CGFloat degrees);
     [m_starInstructions startAnimating];
     
     m_torchButton.hidden = ![self deviceHasTorch];
+    
+    self.dimmerHandle.transform = CGAffineTransformMakeRotation(degreesToRadians(45.0));
+    _dimmerHandleOriginalY = self.dimmerHandle.center.y;
 }
 
 - (void)viewDidUnload
@@ -327,12 +334,6 @@ CGFloat degreesToRadians(CGFloat degrees);
 {
 	[super viewDidDisappear:animated];
 }
-
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-//{
-//    // Return YES for supported orientations
-//    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-//}
 
 -(BOOL)shouldAutorotate
 {
@@ -559,8 +560,8 @@ CGFloat degreesToRadians(CGFloat degrees)
 {
 //    NSLog(@"touchX: %.0f", touchX);
     
-    CGFloat barWidth = 280.0;
-    CGFloat barPadding = 20.0;
+    CGFloat barWidth = 247.0;
+    CGFloat barPadding = 36.0;
     CGFloat leftBorder = barPadding;
     CGFloat rightBorder = (self.view.frame.size.width-barPadding);
     CGFloat handleX;
@@ -578,20 +579,42 @@ CGFloat degreesToRadians(CGFloat degrees)
         handleX = touchX - barPadding;
     }
     
-    
-    // Move handle.
-    
-    CGPoint p = self.dimmerHandle.center;
-    p.x = handleX + barPadding;
-    self.dimmerHandle.center = p;
-    
-    
     // Set alpha.
     
-    CGFloat newDimmerAlpha = (handleX / barWidth);
-    //NSLog(@"pos:%.0f      alpha: %.2f", handleX, newDimmerAlpha);
+    CGFloat handleU = (handleX / barWidth);
+    CGFloat newDimmerAlpha = handleU;
     
     self.lightContainer.alpha = newDimmerAlpha;
+    
+
+    
+    // Move rabbit handle.
+    
+    CGPoint p = self.dimmerHandle.center;
+
+    // 0: 0 
+    // 50: -40
+    // 100: 0
+    //CGFloat offsetHandleY = (sinf(degreesToRadians(handleU * 180.0)) * 40.0);  // Circular
+    
+    // 1: 40
+    // 0: 0
+    // -1: 40
+    CGFloat maxOffsetHandleY = 40.0;
+    CGFloat parabolaU = ((2.0 * handleU) - 1.0);
+    CGFloat parabolaU2 = (parabolaU * parabolaU);
+    CGFloat offsetHandleY = -((parabolaU2 * maxOffsetHandleY));
+    
+    p.y = _dimmerHandleOriginalY - offsetHandleY - maxOffsetHandleY;
+    p.x = handleX + barPadding;
+    self.dimmerHandle.center = p;
+
+    // 0: -45 degrees
+    // 50: 0
+    // 100: 45
+    CGFloat rabbitRotationDegrees = (handleU * 90.0) - 45.0;
+    self.dimmerHandle.transform = CGAffineTransformMakeRotation(degreesToRadians(rabbitRotationDegrees));    
+    
     
     if (handleX < 25)
     {
@@ -607,6 +630,7 @@ CGFloat degreesToRadians(CGFloat degrees)
         self.starWorldButton.hidden = YES;
         self.tapTapWhiteButton.hidden = NO;
     }
+    
     
 }
 

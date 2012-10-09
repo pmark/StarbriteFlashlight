@@ -107,7 +107,7 @@
 								<reference key="NSNextResponder" ref="989524544"/>
 								<int key="NSvFlags">292</int>
 								<array class="NSMutableArray" key="NSSubviews">
-									<object class="IBUIImageView" id="1045669068">
+									<object class="IBUIImageView" id="861602720">
 										<reference key="NSNextResponder" ref="869565050"/>
 										<int key="NSvFlags">256</int>
 										<string key="NSFrame">{{125, 138}, {63, 52}}</string>
@@ -130,7 +130,7 @@
 										<string key="NSFrame">{{19, 33}, {281, 281}}</string>
 										<reference key="NSSuperview" ref="869565050"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="335892082"/>
+										<reference key="NSNextKeyView" ref="736125835"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIOpaque">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -150,13 +150,13 @@
 										<reference key="IBUIFontDescription" ref="119175879"/>
 										<reference key="IBUIFont" ref="72137176"/>
 									</object>
-									<object class="IBUIImageView" id="335892082">
+									<object class="IBUIImageView" id="736125835">
 										<reference key="NSNextResponder" ref="869565050"/>
 										<int key="NSvFlags">256</int>
 										<string key="NSFrame">{{120, 155}, {74, 21}}</string>
 										<reference key="NSSuperview" ref="869565050"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="1045669068"/>
+										<reference key="NSNextKeyView" ref="861602720"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">4</int>
@@ -233,7 +233,7 @@
 									<object class="IBUIImageView" id="1015106986">
 										<reference key="NSNextResponder" ref="48445851"/>
 										<int key="NSvFlags">256</int>
-										<string key="NSFrame">{{20, 53}, {280, 15}}</string>
+										<string key="NSFrame">{{36, 65}, {247, 8}}</string>
 										<reference key="NSSuperview" ref="48445851"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="911033059"/>
@@ -244,13 +244,13 @@
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<object class="NSCustomResource" key="IBUIImage">
 											<string key="NSClassName">NSImage</string>
-											<string key="NSResourceName">dimmer_bar_280x15.png</string>
+											<string key="NSResourceName">DimmerBar_267x8.png</string>
 										</object>
 									</object>
 									<object class="IBUIImageView" id="74300132">
 										<reference key="NSNextResponder" ref="48445851"/>
 										<int key="NSvFlags">256</int>
-										<string key="NSFrame">{{138, -3}, {80, 56}}</string>
+										<string key="NSFrame">{{243, 0}, {80, 56}}</string>
 										<reference key="NSSuperview" ref="48445851"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="1015106986"/>
@@ -264,7 +264,7 @@
 											<string key="NSResourceName">Rabbit_80x56.png</string>
 										</object>
 									</object>
-									<object class="IBUIImageView" id="71433846">
+									<object class="IBUIImageView" id="343162670">
 										<reference key="NSNextResponder" ref="48445851"/>
 										<int key="NSvFlags">-2147483392</int>
 										<string key="NSFrame">{{16, 48}, {18, 18}}</string>
@@ -282,10 +282,10 @@
 										</object>
 									</object>
 								</array>
-								<string key="NSFrame">{{0, 340}, {320, 120}}</string>
+								<string key="NSFrame">{{0, 360}, {320, 120}}</string>
 								<reference key="NSSuperview" ref="989524544"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="71433846"/>
+								<reference key="NSNextKeyView" ref="343162670"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="672936957"/>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -296,7 +296,6 @@
 								<string key="NSFrame">{{0, 360}, {320, 120}}</string>
 								<reference key="NSSuperview" ref="989524544"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:196</string>
 								<reference key="IBUIBackgroundColor" ref="672936957"/>
 								<bool key="IBUIOpaque">NO</bool>
@@ -397,7 +396,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">starWorldButton</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="1045669068"/>
+						<reference key="destination" ref="861602720"/>
 					</object>
 					<int key="connectionID">57</int>
 				</object>
@@ -405,7 +404,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">tapTapWhiteButton</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="335892082"/>
+						<reference key="destination" ref="736125835"/>
 					</object>
 					<int key="connectionID">60</int>
 				</object>
@@ -502,8 +501,8 @@
 						<reference key="object" ref="869565050"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="429864498"/>
-							<reference ref="1045669068"/>
-							<reference ref="335892082"/>
+							<reference ref="861602720"/>
+							<reference ref="736125835"/>
 						</array>
 						<reference key="parent" ref="989524544"/>
 						<string key="objectName">Dark</string>
@@ -514,7 +513,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="1015106986"/>
 							<reference ref="74300132"/>
-							<reference ref="71433846"/>
+							<reference ref="343162670"/>
 						</array>
 						<reference key="parent" ref="989524544"/>
 						<string key="objectName">Dimmer Controls</string>
@@ -557,17 +556,17 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">56</int>
-						<reference key="object" ref="1045669068"/>
+						<reference key="object" ref="861602720"/>
 						<reference key="parent" ref="869565050"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">58</int>
-						<reference key="object" ref="71433846"/>
+						<reference key="object" ref="343162670"/>
 						<reference key="parent" ref="48445851"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">59</int>
-						<reference key="object" ref="335892082"/>
+						<reference key="object" ref="736125835"/>
 						<reference key="parent" ref="869565050"/>
 					</object>
 				</array>
@@ -707,12 +706,12 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="CloseButton_27x27.png">{27, 27}</string>
+			<string key="DimmerBar_267x8.png">{267, 8}</string>
 			<string key="Rabbit_80x56.png">{80, 56}</string>
 			<string key="StarWorld_63x52.png">{63, 52}</string>
 			<string key="SunDark_281x281.png">{281, 281}</string>
 			<string key="SunLight_281x281.png">{281, 281}</string>
 			<string key="TapTap_White_74x21.png">{74, 21}</string>
-			<string key="dimmer_bar_280x15.png">{280, 15}</string>
 			<string key="polaris.png">{118, 118}</string>
 			<string key="taptap.png">{80, 31}</string>
 		</dictionary>
