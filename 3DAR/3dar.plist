@@ -12,5 +12,7 @@
 	<string>manual</string>
 	<key>3darLookMode</key>
 	<string>free</string>
+	<key>3darDisableHeadingCalibrationAlert</key>
+	<true/>
 </dict>
 </plist>

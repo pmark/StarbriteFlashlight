@@ -20,9 +20,24 @@ CGFloat degreesToRadians(CGFloat degrees);
 
 @interface ViewController ()
 {
+    RunMode runMode;
+    AVCaptureSession *captureSession;
+    AVCaptureDevice *captureDevice;
+    IBOutlet UIView *menuContainer;
+    IBOutlet UIView *hudView;
+    IBOutlet UILabel *starMessageLabel;
+    SoundEnvironment *soundEnvironment;
+    IBOutlet UIImageView *m_quotationImage;
+    IBOutlet UIImageView *m_starInstructions;
+    IBOutlet UIView *m_dimmer;
+    IBOutlet UIButton *m_torchButton;
+    NSInteger m_lastStarFocusedAt;
     CGFloat _dimmerHandleOriginalY;
 }
 - (void)setupTorch;
+
+@property (nonatomic, strong) SM3DARPoint *infoPoint;
+
 @end
 
 
@@ -49,8 +64,12 @@ CGFloat degreesToRadians(CGFloat degrees);
     self.lightContainer = nil;
     self.dimmerHandle = nil;
     self.dimmerTouchpad = nil;
+    self.infoPoint = nil;
     [_starWorldButton release];
     [_tapTapWhiteButton release];
+    [_webView release];
+    [_splash release];
+    [_dimmerControls release];
     [super dealloc];
 }
 
@@ -210,6 +229,23 @@ CGFloat degreesToRadians(CGFloat degrees);
         
         NSString *imageName = [NSString stringWithFormat:@"quotation%@.png", newPOI.title];
         [m_quotationImage setImage:[UIImage imageNamed:imageName]];
+        
+        if ([newPOI isEqual:self.infoPoint])
+        {
+            // show web view
+            self.webView.alpha = 1.0;
+
+        }
+        else
+        {
+            // hide web view
+            self.webView.alpha = 0.0;
+        }
+    }
+    else
+    {
+        // hide web view
+        self.webView.alpha = 0.0;
     }
 }
 
@@ -281,6 +317,13 @@ CGFloat degreesToRadians(CGFloat degrees);
     
     self.dimmerHandle.transform = CGAffineTransformMakeRotation(degreesToRadians(45.0));
     _dimmerHandleOriginalY = self.dimmerHandle.center.y;
+    
+    if (self.view.frame.size.height > 480)
+    {
+        self.splash.image = [UIImage imageNamed:@"Default-568h@2x.png"];
+    }
+    
+    self.splash.frame = self.view.bounds;
 }
 
 - (void)viewDidUnload
@@ -301,6 +344,9 @@ CGFloat degreesToRadians(CGFloat degrees);
     m_torchButton = nil;
     [self setStarWorldButton:nil];
     [self setTapTapWhiteButton:nil];
+    [self setWebView:nil];
+    [self setSplash:nil];
+    [self setDimmerControls:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -316,6 +362,23 @@ CGFloat degreesToRadians(CGFloat degrees);
     return !menuContainer.hidden;
 }
 
+- (void)hideSplash
+{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(splashWasHidden)];
+
+    self.splash.alpha = 0.0;
+    
+    [UIView commitAnimations];
+}
+
+- (void)splashWasHidden
+{
+    self.splash.hidden = YES;
+    [self.view sendSubviewToBack:self.splash];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -323,6 +386,8 @@ CGFloat degreesToRadians(CGFloat degrees);
     [self toggleTorch:[self inMode:RunModeTorchOn]];
     
     [self setup3dar];
+    
+    [self performSelector:@selector(hideSplash) withObject:nil afterDelay:2.0];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -493,6 +558,7 @@ CGFloat degreesToRadians(CGFloat degrees)
 
     NSLog(@"Adding 3DAR points.");
     [self addSkyPano];
+    [self addInfoPoint];
     [self addPlanetoids];
     [self addNorthStar];
     [self addStars];
@@ -649,6 +715,26 @@ CGFloat degreesToRadians(CGFloat degrees)
     [self setDimmerFromTouchX:touchX];
 }
 
+- (IBAction)webViewWasTapped:(id)sender
+{
+    BOOL webViewParentIsMainView = [self.webView.superview isEqual:self.view];
+    
+    if (webViewParentIsMainView)
+    {
+        // Move back to HUD.
+        
+        [APP_DELEGATE.sm3dar.hudView addSubview:self.webView];
+        NSLog(@"Moved webview to HUD.");
+    }
+    else
+    {
+        // Move to main view.
+        
+        [self.view addSubview:self.webView];
+        NSLog(@"Moved webview to main view.");
+    }
+}
+
 CGPoint m_firstTouch;
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -683,8 +769,8 @@ CGPoint m_firstTouch;
 
 - (void)addNorthStar
 {
-    SM3DARPoint *point = [[SM3DARFixture alloc] init];
-
+    SM3DARPoint *point = [[[SM3DARFixture alloc] init] autorelease];
+    
     Coord3D northCoord;
     northCoord.x = 0;
     northCoord.y = 13001;
@@ -692,9 +778,42 @@ CGPoint m_firstTouch;
     point.worldPoint = northCoord;
     
     point.canReceiveFocus = NO;
-    point.view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"polaris.png"]];
-
+    point.view = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"polaris.png"]] autorelease];
+    
     [APP_DELEGATE.sm3dar addPoint:point];
 }
+
+- (void)addInfoPoint
+{
+    NSString *url = @"http://seanoteworthy.tumblr.com/";
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+    self.infoPoint = [[[SM3DARFixture alloc] init] autorelease];
+    
+    Coord3D upCoord;
+    upCoord.x = 0;
+    upCoord.y = -15000;
+    upCoord.z = 8000;
+    self.infoPoint.worldPoint = upCoord;
+    self.infoPoint.canReceiveFocus = YES;
+    self.infoPoint.view = self.webView;
+    
+    [APP_DELEGATE.sm3dar addPoint:self.infoPoint];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    self.webView.hidden = YES;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    self.webView.hidden = NO;
+}
+
+- (void)snapDimmerControlToBottom
+{
+    
+}
+
 
 @end

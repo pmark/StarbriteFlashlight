@@ -14,7 +14,9 @@
 			<string>IBProxyObject</string>
 			<string>IBUIButton</string>
 			<string>IBUIImageView</string>
+			<string>IBUITapGestureRecognizer</string>
 			<string>IBUIView</string>
+			<string>IBUIWebView</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -46,7 +48,7 @@
 								<string key="NSFrame">{{2, 2}, {27, 27}}</string>
 								<reference key="NSSuperview" ref="577116930"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="1013804880"/>
+								<reference key="NSNextKeyView" ref="113131247"/>
 								<string key="NSReuseIdentifierKey">_NS:225</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -88,15 +90,30 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
+							<object class="IBUIWebView" id="113131247">
+								<reference key="NSNextResponder" ref="577116930"/>
+								<int key="NSvFlags">-2147483356</int>
+								<string key="NSFrame">{{10, 90}, {300, 300}}</string>
+								<reference key="NSSuperview" ref="577116930"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="1013804880"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<object class="NSColor" key="IBUIBackgroundColor" id="672936957">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MCAwAA</bytes>
+								</object>
+								<bool key="IBUIOpaque">NO</bool>
+								<array key="IBUIGestureRecognizers" id="0"/>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<int key="IBUIDataDetectorTypes">1</int>
+								<bool key="IBUIDetectsPhoneNumbers">YES</bool>
+							</object>
 						</array>
 						<string key="NSFrameSize">{320, 480}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="705357086"/>
-						<object class="NSColor" key="IBUIBackgroundColor" id="672936957">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MCAwAA</bytes>
-						</object>
+						<reference key="IBUIBackgroundColor" ref="672936957"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 					<object class="IBUIView" id="989524544">
@@ -110,7 +127,7 @@
 									<object class="IBUIImageView" id="861602720">
 										<reference key="NSNextResponder" ref="869565050"/>
 										<int key="NSvFlags">256</int>
-										<string key="NSFrame">{{125, 138}, {63, 52}}</string>
+										<string key="NSFrame">{{127, 140}, {63, 52}}</string>
 										<reference key="NSSuperview" ref="869565050"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="267518931"/>
@@ -127,7 +144,7 @@
 									<object class="IBUIButton" id="429864498">
 										<reference key="NSNextResponder" ref="869565050"/>
 										<int key="NSvFlags">292</int>
-										<string key="NSFrame">{{19, 33}, {281, 281}}</string>
+										<string key="NSFrame">{{22, 37}, {281, 281}}</string>
 										<reference key="NSSuperview" ref="869565050"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="736125835"/>
@@ -153,7 +170,7 @@
 									<object class="IBUIImageView" id="736125835">
 										<reference key="NSNextResponder" ref="869565050"/>
 										<int key="NSvFlags">256</int>
-										<string key="NSFrame">{{120, 155}, {74, 21}}</string>
+										<string key="NSFrame">{{122, 157}, {74, 21}}</string>
 										<reference key="NSSuperview" ref="869565050"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="861602720"/>
@@ -173,9 +190,9 @@
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="429864498"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<object class="NSColor" key="IBUIBackgroundColor" id="725350428">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MAA</bytes>
+								<object class="NSColor" key="IBUIBackgroundColor">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MCAwIDAuMTI1NDkwMjAzNQA</bytes>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
@@ -186,7 +203,7 @@
 									<object class="IBUIImageView" id="770057259">
 										<reference key="NSNextResponder" ref="267518931"/>
 										<int key="NSvFlags">256</int>
-										<string key="NSFrame">{{19, 33}, {281, 281}}</string>
+										<string key="NSFrame">{{22, 37}, {281, 281}}</string>
 										<reference key="NSSuperview" ref="267518931"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="889414353"/>
@@ -203,7 +220,7 @@
 									<object class="IBUIImageView" id="889414353">
 										<reference key="NSNextResponder" ref="267518931"/>
 										<int key="NSvFlags">256</int>
-										<string key="NSFrame">{{117, 150}, {80, 31}}</string>
+										<string key="NSFrame">{{122, 157}, {74, 21}}</string>
 										<reference key="NSSuperview" ref="267518931"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="48445851"/>
@@ -214,7 +231,7 @@
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<object class="NSCustomResource" key="IBUIImage">
 											<string key="NSClassName">NSImage</string>
-											<string key="NSResourceName">taptap.png</string>
+											<string key="NSResourceName">TapTap_Black_74x21.png</string>
 										</object>
 									</object>
 								</array>
@@ -296,10 +313,11 @@
 								<string key="NSFrame">{{0, 360}, {320, 120}}</string>
 								<reference key="NSSuperview" ref="989524544"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="212604718"/>
 								<string key="NSReuseIdentifierKey">_NS:196</string>
 								<reference key="IBUIBackgroundColor" ref="672936957"/>
 								<bool key="IBUIOpaque">NO</bool>
-								<array key="IBUIGestureRecognizers" id="0"/>
+								<reference key="IBUIGestureRecognizers" ref="0"/>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
@@ -316,15 +334,51 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
+					<object class="IBUIImageView" id="212604718">
+						<reference key="NSNextResponder" ref="774585933"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrameSize">{320, 480}</string>
+						<reference key="NSSuperview" ref="774585933"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">Default.png</string>
+						</object>
+					</object>
 				</array>
-				<string key="NSFrameSize">{320, 460}</string>
+				<string key="NSFrameSize">{320, 480}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="577116930"/>
-				<reference key="IBUIBackgroundColor" ref="725350428"/>
+				<object class="NSColor" key="IBUIBackgroundColor">
+					<int key="NSColorSpace">1</int>
+					<bytes key="NSRGB">MCAwIDAAA</bytes>
+				</object>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+				<object class="IBUIScreenMetrics" key="IBUISimulatedDestinationMetrics">
+					<string key="IBUISimulatedSizeMetricsClass">IBUIScreenMetrics</string>
+					<object class="NSMutableDictionary" key="IBUINormalizedOrientationToSizeMap">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<array key="dict.sortedKeys">
+							<integer value="1"/>
+							<integer value="3"/>
+						</array>
+						<array key="dict.values">
+							<string>{320, 480}</string>
+							<string>{480, 320}</string>
+						</array>
+					</object>
+					<string key="IBUITargetRuntime">IBCocoaTouchFramework</string>
+					<string key="IBUIDisplayName">Retina 3.5 Full Screen</string>
+					<int key="IBUIType">0</int>
+				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
+			<object class="IBUITapGestureRecognizer" id="84111046"/>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<array class="NSMutableArray" key="connectionRecords">
@@ -409,6 +463,30 @@
 					<int key="connectionID">60</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">webView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="113131247"/>
+					</object>
+					<int key="connectionID">62</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">splash</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="212604718"/>
+					</object>
+					<int key="connectionID">69</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">dimmerControls</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="48445851"/>
+					</object>
+					<int key="connectionID">70</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">closeButtonTapped:</string>
 						<reference key="source" ref="705357086"/>
@@ -425,6 +503,32 @@
 						<int key="IBEventType">7</int>
 					</object>
 					<int key="connectionID">53</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="113131247"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">64</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">gestureRecognizers</string>
+						<reference key="source" ref="113131247"/>
+						<reference key="destination" ref="84111046"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+						<bool key="addsContentToExistingCollection">YES</bool>
+					</object>
+					<int key="connectionID">66</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">webViewWasTapped:</string>
+						<reference key="source" ref="84111046"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">67</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -452,6 +556,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="989524544"/>
 							<reference ref="577116930"/>
+							<reference ref="212604718"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -473,6 +578,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="1013804880"/>
 							<reference ref="705357086"/>
+							<reference ref="113131247"/>
 						</array>
 						<reference key="parent" ref="774585933"/>
 						<string key="objectName">HUD</string>
@@ -542,22 +648,25 @@
 						<int key="objectID">54</int>
 						<reference key="object" ref="770057259"/>
 						<reference key="parent" ref="267518931"/>
+						<string key="objectName">Sun button black</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">55</int>
 						<reference key="object" ref="889414353"/>
 						<reference key="parent" ref="267518931"/>
+						<string key="objectName">Tap Tap black</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">52</int>
 						<reference key="object" ref="429864498"/>
 						<reference key="parent" ref="869565050"/>
-						<string key="objectName">Star button</string>
+						<string key="objectName">Sun button white</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">56</int>
 						<reference key="object" ref="861602720"/>
 						<reference key="parent" ref="869565050"/>
+						<string key="objectName">Star World</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">58</int>
@@ -568,6 +677,23 @@
 						<int key="objectID">59</int>
 						<reference key="object" ref="736125835"/>
 						<reference key="parent" ref="869565050"/>
+						<string key="objectName">Tap Tab white</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">61</int>
+						<reference key="object" ref="113131247"/>
+						<array class="NSMutableArray" key="children"/>
+						<reference key="parent" ref="577116930"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">65</int>
+						<reference key="object" ref="84111046"/>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">68</int>
+						<reference key="object" ref="212604718"/>
+						<reference key="parent" ref="774585933"/>
 					</object>
 				</array>
 			</object>
@@ -593,12 +719,15 @@
 				<string key="58.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="59.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="61.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="65.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="68.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">60</int>
+			<int key="maxID">70</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -609,6 +738,7 @@
 						<string key="beginMentalIllumination:">id</string>
 						<string key="closeButtonTapped:">id</string>
 						<string key="onDimmerPan:">UIPanGestureRecognizer</string>
+						<string key="webViewWasTapped:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="beginMentalIllumination:">
@@ -623,9 +753,14 @@
 							<string key="name">onDimmerPan:</string>
 							<string key="candidateClassName">UIPanGestureRecognizer</string>
 						</object>
+						<object class="IBActionInfo" key="webViewWasTapped:">
+							<string key="name">webViewWasTapped:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="darkContainer">UIView</string>
+						<string key="dimmerControls">UIView</string>
 						<string key="dimmerHandle">UIImageView</string>
 						<string key="dimmerTouchpad">UIView</string>
 						<string key="hudView">UIView</string>
@@ -635,13 +770,19 @@
 						<string key="m_starInstructions">UIImageView</string>
 						<string key="m_torchButton">UIButton</string>
 						<string key="menuContainer">UIView</string>
+						<string key="splash">UIImageView</string>
 						<string key="starMessageLabel">UILabel</string>
 						<string key="starWorldButton">UIImageView</string>
 						<string key="tapTapWhiteButton">UIImageView</string>
+						<string key="webView">UIWebView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="darkContainer">
 							<string key="name">darkContainer</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="dimmerControls">
+							<string key="name">dimmerControls</string>
 							<string key="candidateClassName">UIView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="dimmerHandle">
@@ -680,6 +821,10 @@
 							<string key="name">menuContainer</string>
 							<string key="candidateClassName">UIView</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="splash">
+							<string key="name">splash</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="starMessageLabel">
 							<string key="name">starMessageLabel</string>
 							<string key="candidateClassName">UILabel</string>
@@ -691,6 +836,10 @@
 						<object class="IBToOneOutletInfo" key="tapTapWhiteButton">
 							<string key="name">tapTapWhiteButton</string>
 							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="webView">
+							<string key="name">webView</string>
+							<string key="candidateClassName">UIWebView</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -706,14 +855,15 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="CloseButton_27x27.png">{27, 27}</string>
+			<string key="Default.png">{320, 480}</string>
 			<string key="DimmerBar_267x8.png">{267, 8}</string>
 			<string key="Rabbit_80x56.png">{80, 56}</string>
 			<string key="StarWorld_63x52.png">{63, 52}</string>
 			<string key="SunDark_281x281.png">{281, 281}</string>
 			<string key="SunLight_281x281.png">{281, 281}</string>
+			<string key="TapTap_Black_74x21.png">{74, 21}</string>
 			<string key="TapTap_White_74x21.png">{74, 21}</string>
 			<string key="polaris.png">{118, 118}</string>
-			<string key="taptap.png">{80, 31}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1926</string>
 	</data>
