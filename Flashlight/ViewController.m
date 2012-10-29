@@ -70,6 +70,8 @@ CGFloat degreesToRadians(CGFloat degrees);
     [_webView release];
     [_splash release];
     [_dimmerControls release];
+    [_sunContainerLight release];
+    [_sunContainerDark release];
     [super dealloc];
 }
 
@@ -292,11 +294,18 @@ CGFloat degreesToRadians(CGFloat degrees);
     }
 }
 
+- (CGFloat)screenHeight
+{
+    CGRect bounds = [[UIScreen mainScreen] bounds];
+    return bounds.size.height;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     hudView.hidden = YES;
+    self.webView.hidden = YES;
 
     [self setupTorch];
     
@@ -318,12 +327,8 @@ CGFloat degreesToRadians(CGFloat degrees);
     self.dimmerHandle.transform = CGAffineTransformMakeRotation(degreesToRadians(45.0));
     _dimmerHandleOriginalY = self.dimmerHandle.center.y;
     
-    if (self.view.frame.size.height > 480)
-    {
-        self.splash.image = [UIImage imageNamed:@"Default-568h@2x.png"];
-    }
-    
-    self.splash.frame = self.view.bounds;
+    [self adaptToScreenSize];
+    [self setDimmerFromTouchX:320];
 }
 
 - (void)viewDidUnload
@@ -347,6 +352,8 @@ CGFloat degreesToRadians(CGFloat degrees);
     [self setWebView:nil];
     [self setSplash:nil];
     [self setDimmerControls:nil];
+    [self setSunContainerLight:nil];
+    [self setSunContainerDark:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -558,7 +565,7 @@ CGFloat degreesToRadians(CGFloat degrees)
 
     NSLog(@"Adding 3DAR points.");
     [self addSkyPano];
-    [self addInfoPoint];
+   // [self addInfoPoint];
     [self addPlanetoids];
     [self addNorthStar];
     [self addStars];
@@ -644,6 +651,8 @@ CGFloat degreesToRadians(CGFloat degrees)
     {
         handleX = touchX - barPadding;
     }
+    
+//    handleX += 10;
     
     // Set alpha.
     
@@ -749,13 +758,15 @@ CGPoint m_firstTouch;
     }
     else
     {
-        m_firstTouch = [touch locationInView:self.view];
-        
-        if (m_firstTouch.y >= self.dimmerTouchpad.frame.origin.y)
+        if ([self isTouchingRabbit:touch])
         {
-            [self setDimmerFromTouchX:m_firstTouch.x];
+            m_firstTouch = [touch locationInView:self.view];
+
+            if (m_firstTouch.y >= self.dimmerTouchpad.frame.origin.y)
+            {
+                [self setDimmerFromTouchX:m_firstTouch.x];
+            }
         }
-        
     }
     
 }
@@ -763,8 +774,23 @@ CGPoint m_firstTouch;
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
-    m_firstTouch = [touch locationInView:self.dimmerTouchpad];
-    [self setDimmerFromTouchX:m_firstTouch.x];
+
+    if ([self isTouchingRabbit:touch])
+    {
+        m_firstTouch = [touch locationInView:self.dimmerTouchpad];
+        [self setDimmerFromTouchX:m_firstTouch.x];
+    }
+}
+
+- (BOOL)isTouchingRabbit:(UITouch*)touch
+{
+    CGPoint rabbitTouchPoint = [touch locationInView:self.dimmerHandle];
+    //NSLog(@"rabbit touch point: %.0f, %.0f", rabbitTouchPoint.x, rabbitTouchPoint.y);
+    
+    CGSize rabbitSize = self.dimmerHandle.frame.size;
+    
+    return (rabbitTouchPoint.x > 0 && rabbitTouchPoint.x < rabbitSize.width);
+                        //  rabbitTouchPoint.y > 0 && rabbitTouchPoint.y < rabbitSize.height);
 }
 
 - (void)addNorthStar
@@ -810,10 +836,83 @@ CGPoint m_firstTouch;
     self.webView.hidden = NO;
 }
 
+- (BOOL)is4inchRetinaScreen
+{
+    return ([self screenHeight] > 480.0);
+}
+
+- (void)printScreenResolution
+{
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    {
+        if ([UIScreen mainScreen].scale == 2.0f)
+        {
+            CGSize result = [[UIScreen mainScreen] bounds].size;
+            CGFloat scale = [UIScreen mainScreen].scale;
+            result = CGSizeMake(result.width * scale, result.height * scale);
+            
+            if(result.height == 960)
+            {
+                NSLog(@"iPhone 4, 4s Retina Resolution");
+            }
+            
+            if (result.height == 1136)
+            {
+                NSLog(@"iPhone 5 Resolution");
+            }
+        }
+        else
+        {
+            NSLog(@"iPhone Standard Resolution");
+        }
+    }
+    else
+    {
+        if ([UIScreen mainScreen].scale == 2.0f)
+        {
+            NSLog(@"iPad Retina Resolution");
+        }
+        else
+        {
+            NSLog(@"iPad Standard Resolution");
+        }
+    }
+}
+
 - (void)snapDimmerControlToBottom
 {
+    CGRect f = self.dimmerControls.frame;
+    f.origin.y = [self screenHeight] - f.size.height;
+    self.dimmerControls.frame = f;
+}
+
+- (void)repositionSunContainers
+{
+    CGFloat offset = 21.0;
+    
+    CGRect f = self.sunContainerDark.frame;
+    f.origin.y += offset;
+    self.sunContainerDark.frame = f;
+    
+    f = self.sunContainerLight.frame;
+    f.origin.y += offset;
+    self.sunContainerLight.frame = f;
     
 }
 
+- (void)adaptToScreenSize
+{
+    BOOL hasTallScreen = [self is4inchRetinaScreen];
+    
+    if (hasTallScreen)
+    {
+        self.splash.image = [UIImage imageNamed:@"Default-568h@2x.png"];
+        self.splash.frame = [[UIScreen mainScreen] bounds];
+        
+        [self repositionSunContainers];
+    }
+
+    [self snapDimmerControlToBottom];
+}
 
 @end

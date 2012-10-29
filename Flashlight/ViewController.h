@@ -34,6 +34,8 @@ typedef enum
 @property (retain, nonatomic) IBOutlet UIImageView *tapTapWhiteButton;
 @property (retain, nonatomic) IBOutlet UIWebView *webView;
 @property (retain, nonatomic) IBOutlet UIImageView *splash;
+@property (retain, nonatomic) IBOutlet UIView *sunContainerLight;
+@property (retain, nonatomic) IBOutlet UIView *sunContainerDark;
 
 - (void)toggleTorchState;
 - (void)toggleTorch:(BOOL)torchOn;
