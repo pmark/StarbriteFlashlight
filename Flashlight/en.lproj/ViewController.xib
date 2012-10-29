@@ -272,6 +272,70 @@
 								<reference key="NSNextResponder" ref="989524544"/>
 								<int key="NSvFlags">274</int>
 								<array class="NSMutableArray" key="NSSubviews">
+									<object class="IBUIImageView" id="959724377">
+										<reference key="NSNextResponder" ref="48445851"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{226, -18}, {15, 15}}</string>
+										<reference key="NSSuperview" ref="48445851"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="412271596"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<int key="IBUITag">8001</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<object class="NSCustomResource" key="IBUIImage">
+											<string key="NSClassName">NSImage</string>
+											<string key="NSResourceName">Star2_focused.png</string>
+										</object>
+									</object>
+									<object class="IBUIImageView" id="729018590">
+										<reference key="NSNextResponder" ref="48445851"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{161, -34}, {20, 20}}</string>
+										<reference key="NSSuperview" ref="48445851"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="959724377"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<int key="IBUITag">8002</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<object class="NSCustomResource" key="IBUIImage">
+											<string key="NSClassName">NSImage</string>
+											<string key="NSResourceName">Star4_focused.png</string>
+										</object>
+									</object>
+									<object class="IBUIImageView" id="633882424">
+										<reference key="NSNextResponder" ref="48445851"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{91, -23}, {25, 25}}</string>
+										<reference key="NSSuperview" ref="48445851"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="729018590"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<int key="IBUITag">8003</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<object class="NSCustomResource" key="IBUIImage">
+											<string key="NSClassName">NSImage</string>
+											<string key="NSResourceName">Star3_focused.png</string>
+										</object>
+									</object>
+									<object class="IBUIImageView" id="412271596">
+										<reference key="NSNextResponder" ref="48445851"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{21, 15}, {33, 33}}</string>
+										<reference key="NSSuperview" ref="48445851"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="74300132"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<int key="IBUITag">8004</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<object class="NSCustomResource" key="IBUIImage">
+											<string key="NSClassName">NSImage</string>
+											<string key="NSResourceName">Star1_focused.png</string>
+										</object>
+									</object>
 									<object class="IBUIImageView" id="1015106986">
 										<reference key="NSNextResponder" ref="48445851"/>
 										<int key="NSvFlags">256</int>
@@ -310,7 +374,7 @@
 								<string key="NSFrame">{{0, 360}, {320, 120}}</string>
 								<reference key="NSSuperview" ref="989524544"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
+								<reference key="NSNextKeyView" ref="633882424"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="672936957"/>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -344,7 +408,7 @@
 					</object>
 					<object class="IBUIImageView" id="212604718">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">-2147483356</int>
 						<string key="NSFrameSize">{320, 480}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
@@ -632,6 +696,10 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="1015106986"/>
 							<reference ref="74300132"/>
+							<reference ref="729018590"/>
+							<reference ref="412271596"/>
+							<reference ref="633882424"/>
+							<reference ref="959724377"/>
 						</array>
 						<reference key="parent" ref="989524544"/>
 						<string key="objectName">Dimmer Controls</string>
@@ -734,6 +802,30 @@
 						<reference key="parent" ref="940306709"/>
 						<string key="objectName">Tap Tap black</string>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">76</int>
+						<reference key="object" ref="412271596"/>
+						<reference key="parent" ref="48445851"/>
+						<string key="objectName">Star</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">77</int>
+						<reference key="object" ref="729018590"/>
+						<reference key="parent" ref="48445851"/>
+						<string key="objectName">Star</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">78</int>
+						<reference key="object" ref="633882424"/>
+						<reference key="parent" ref="48445851"/>
+						<string key="objectName">Star</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">79</int>
+						<reference key="object" ref="959724377"/>
+						<reference key="parent" ref="48445851"/>
+						<string key="objectName">Star</string>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -762,12 +854,16 @@
 				<string key="68.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="76.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="77.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="78.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="79.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">75</int>
+			<int key="maxID">79</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -908,6 +1004,10 @@
 			<string key="Default.png">{320, 480}</string>
 			<string key="DimmerBar_267x8.png">{267, 8}</string>
 			<string key="Rabbit_80x56.png">{80, 56}</string>
+			<string key="Star1_focused.png">{300, 300}</string>
+			<string key="Star2_focused.png">{300, 300}</string>
+			<string key="Star3_focused.png">{300, 300}</string>
+			<string key="Star4_focused.png">{300, 300}</string>
 			<string key="StarWorld_63x52.png">{63, 52}</string>
 			<string key="SunDark_281x281.png">{281, 281}</string>
 			<string key="SunLight_281x281.png">{281, 281}</string>

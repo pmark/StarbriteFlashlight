@@ -33,6 +33,7 @@ CGFloat degreesToRadians(CGFloat degrees);
     IBOutlet UIButton *m_torchButton;
     NSInteger m_lastStarFocusedAt;
     CGFloat _dimmerHandleOriginalY;
+    BOOL animatingStar;
 }
 - (void)setupTorch;
 
@@ -329,6 +330,23 @@ CGFloat degreesToRadians(CGFloat degrees);
     
     [self adaptToScreenSize];
     [self setDimmerFromTouchX:320];
+    
+    self.splash.hidden = NO;
+    self.starWorldButton.alpha = 0.15;
+    CGFloat scale = 0.9;
+    self.starWorldButton.transform = CGAffineTransformMakeScale(scale, scale);
+
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationRepeatAutoreverses:YES];
+    [UIView setAnimationRepeatCount:INT_MAX];
+    [UIView setAnimationDuration:1.0];
+    
+    scale = 1.15;
+    self.starWorldButton.transform = CGAffineTransformMakeScale(scale, scale);
+    self.starWorldButton.alpha = 1.0;
+
+    [UIView commitAnimations];
+
 }
 
 - (void)viewDidUnload
@@ -629,6 +647,9 @@ CGFloat degreesToRadians(CGFloat degrees)
 }
 */
 
+NSInteger iLastPassedStarU = 0.0;
+CGFloat previousTouchX;
+
 - (void)setDimmerFromTouchX:(CGFloat)touchX
 {
 //    NSLog(@"touchX: %.0f", touchX);
@@ -651,8 +672,6 @@ CGFloat degreesToRadians(CGFloat degrees)
     {
         handleX = touchX - barPadding;
     }
-    
-//    handleX += 10;
     
     // Set alpha.
     
@@ -681,7 +700,7 @@ CGFloat degreesToRadians(CGFloat degrees)
     CGFloat offsetHandleY = -((parabolaU2 * maxOffsetHandleY));
     
     p.y = _dimmerHandleOriginalY - offsetHandleY - maxOffsetHandleY;
-    p.x = handleX + barPadding;
+    p.x = handleX + barPadding + 8;
     self.dimmerHandle.center = p;
 
     // 0: -45 degrees
@@ -691,7 +710,7 @@ CGFloat degreesToRadians(CGFloat degrees)
     self.dimmerHandle.transform = CGAffineTransformMakeRotation(degreesToRadians(rabbitRotationDegrees));    
     
     
-    if (handleX < 25)
+    if (handleU < 0.20)
     {
         // StarWorld button mode.
         
@@ -703,15 +722,159 @@ CGFloat degreesToRadians(CGFloat degrees)
         self.lightContainer.hidden = NO;
         [self setStarWorldButtonHidden:YES];
     }
+    
+    
+    // Must be heading left.
+    BOOL headingLeft = ((previousTouchX - touchX) > 0.0);
+    
+    if (!animatingStar)
+    {
+        NSInteger iHandleU = handleU * 1000.0;
+
+        if (abs(iLastPassedStarU - iHandleU) >= 100.0)
+        {
+//            NSLog(@"%i", iHandleU);
+            iLastPassedStarU = iHandleU;
+            
+            NSMutableArray *passedStars = [NSMutableArray arrayWithCapacity:4];
+            
+            // htf do i know if a star has been passed?
+            // 
+            
+            UIImageView *star;
+
+            if (iHandleU <= 850)
+            {
+                star = (UIImageView *)[self.view viewWithTag:8001];
+                
+                if (headingLeft && !star.highlighted)
+                {
+                    [passedStars addObject:star];
+                }
+            }
+            else if (!headingLeft)
+            {
+                star = (UIImageView *)[self.view viewWithTag:8001];
+                if (star.highlighted)
+                {
+                    [passedStars addObject:star];
+                }
+            }
+
+            if (iHandleU <= 650)
+            {
+                star = (UIImageView *)[self.view viewWithTag:8002];
+                
+                if (headingLeft && !star.highlighted)
+                {
+                    [passedStars addObject:star];
+                }
+            }
+            else if (!headingLeft)
+            {
+                star = (UIImageView *)[self.view viewWithTag:8002];
+                if (star.highlighted)
+                {
+                    [passedStars addObject:star];
+                }
+            }
+
+            if (iHandleU <= 450)
+            {
+                star = (UIImageView *)[self.view viewWithTag:8003];
+                
+                if (headingLeft && !star.highlighted)
+                {
+                    [passedStars addObject:star];
+                }
+            }
+            else if (!headingLeft)
+            {
+                star = (UIImageView *)[self.view viewWithTag:8003];
+                if (star.highlighted)
+                {
+                    [passedStars addObject:star];
+                }
+            }
+            
+            if (iHandleU <= 260)
+            {
+                star = (UIImageView *)[self.view viewWithTag:8004];
+                
+                if (headingLeft && !star.highlighted)
+                {
+                    [passedStars addObject:star];
+                }
+            }
+            else if (!headingLeft)
+            {
+                star = (UIImageView *)[self.view viewWithTag:8004];
+                if (star.highlighted)
+                {
+                    [passedStars addObject:star];
+                }
+            }
+
+            if ([passedStars count] > 0)
+            {
+                animatingStar = YES;
+                
+                [UIView animateWithDuration:0.33
+                                      delay:0.0
+                                    options:UIViewAnimationOptionCurveEaseIn
+                                 animations:^{
+                                     
+                                     for (UIImageView *star in passedStars)
+                                     {
+                                         if (headingLeft)
+                                         {
+                                             star.alpha = 0.0;
+                                             star.highlighted = YES;
+
+                                             CGFloat scale = 15.0;
+                                             
+                                             CGAffineTransform xfmScale = CGAffineTransformScale(star.transform, scale, scale);
+                                             CGAffineTransform xfmRotate = CGAffineTransformRotate(star.transform, -M_PI_2);
+                                             CGAffineTransform xfmTranslate = CGAffineTransformTranslate(star.transform, 0, -120);
+                                             
+                                             star.transform = CGAffineTransformConcat(
+                                                                CGAffineTransformConcat(xfmRotate, xfmScale),
+                                                                xfmTranslate);
+                                             
+                                         }
+                                     }
+                                     
+                                 } completion:^(BOOL finished) {
+                                     
+                                     if (!headingLeft)
+                                     {
+                                         for (UIImageView *star in passedStars)
+                                         {
+                                             star.transform = CGAffineTransformIdentity;
+                                             star.alpha = 1.0;
+                                             star.highlighted = NO;
+                                         }
+                                     }
+                                     
+                                     animatingStar = NO;
+                                     
+                                 }];
+            }
+        }
+    }
+    
+    previousTouchX = touchX;
 }
 
 - (void)setStarWorldButtonHidden:(BOOL)hidden
 {
+    self.starWorldButton.hidden = hidden;
+    
     CGFloat alpha = (hidden ? 0.0 : 1.0);
 
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.25];
-    self.starWorldButton.alpha = alpha;
+//    self.starWorldButton.alpha = alpha;
     self.tapTapWhiteButton.alpha = (1.0 - alpha);
     [UIView commitAnimations];
 
@@ -888,7 +1051,7 @@ CGPoint m_firstTouch;
 
 - (void)repositionSunContainers
 {
-    CGFloat offset = 21.0;
+    CGFloat offset = 0.0;
     
     CGRect f = self.sunContainerDark.frame;
     f.origin.y += offset;
