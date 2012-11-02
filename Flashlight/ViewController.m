@@ -333,9 +333,10 @@ CGFloat degreesToRadians(CGFloat degrees);
     
     self.splash.hidden = NO;
     self.starWorldButton.alpha = 0.15;
-    CGFloat scale = 0.9;
+    CGFloat scale = 0.97;
     self.starWorldButton.transform = CGAffineTransformMakeScale(scale, scale);
 
+    
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationRepeatAutoreverses:YES];
     [UIView setAnimationRepeatCount:INT_MAX];
@@ -348,6 +349,7 @@ CGFloat degreesToRadians(CGFloat degrees);
     [UIView commitAnimations];
 
 }
+
 
 - (void)viewDidUnload
 {
@@ -610,13 +612,19 @@ CGFloat degreesToRadians(CGFloat degrees)
     APP_DELEGATE.sm3dar.view.hidden = NO;
     
     menuContainer.hidden = YES;
-    m_starInstructions.hidden = NO;
+    m_starInstructions.hidden = YES;
     starMessageLabel.hidden = NO;    
     hudView.hidden = NO;
+    self.sunContainerDark.hidden = YES;
+    self.sunContainerLight.hidden = YES;
+    self.dimmerControls.hidden = YES;
     
     [self.view bringSubviewToFront:APP_DELEGATE.sm3dar.view];
     [self.view bringSubviewToFront:hudView];
-    [self.view bringSubviewToFront:m_starInstructions];
+    
+//    APP_DELEGATE.sm3dar.view.backgroundColor = [UIColor yellowColor];
+    
+//    [self.view bringSubviewToFront:m_starInstructions];
 }
 
 - (void) exitStarMode
@@ -630,6 +638,10 @@ CGFloat degreesToRadians(CGFloat degrees)
     [APP_DELEGATE.sm3dar suspend];
     APP_DELEGATE.sm3dar.glViewEnabled = NO;
     [soundEnvironment stopPlaybackForCurrentPlayer];
+
+    self.sunContainerDark.hidden = NO;
+    self.sunContainerLight.hidden = NO;
+    self.dimmerControls.hidden = NO;
 
     [self.view bringSubviewToFront:menuContainer];
 }
@@ -819,7 +831,7 @@ CGFloat previousTouchX;
             {
                 animatingStar = YES;
                 
-                [UIView animateWithDuration:0.33
+                [UIView animateWithDuration:0.5
                                       delay:0.0
                                     options:UIViewAnimationOptionCurveEaseIn
                                  animations:^{
@@ -1076,6 +1088,11 @@ CGPoint m_firstTouch;
     }
 
     [self snapDimmerControlToBottom];
+}
+
+- (SM3DARCalloutView*) sm3dar:(SM3DARController*)sm3dar calloutViewForPoint:(SM3DARPoint*)point
+{
+    return nil;
 }
 
 @end
