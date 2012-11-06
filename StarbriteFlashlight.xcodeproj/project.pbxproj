@@ -130,6 +130,8 @@
 		A68955071648B97D00675773 /* lib3DAR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A68955061648B97D00675773 /* lib3DAR.a */; };
 		A689550A1648C77B00675773 /* door_open.wav in Resources */ = {isa = PBXBuildFile; fileRef = A68955081648C77B00675773 /* door_open.wav */; };
 		A689550B1648C77B00675773 /* swoosh.wav in Resources */ = {isa = PBXBuildFile; fileRef = A68955091648C77B00675773 /* swoosh.wav */; };
+		A689550E1648F49F00675773 /* Hand_91x48.png in Resources */ = {isa = PBXBuildFile; fileRef = A689550C1648F49F00675773 /* Hand_91x48.png */; };
+		A689550F1648F49F00675773 /* Hand_91x48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A689550D1648F49F00675773 /* Hand_91x48@2x.png */; };
 		A68F050415D078900023F961 /* CloseButton_27x27.png in Resources */ = {isa = PBXBuildFile; fileRef = A68F050215D078900023F961 /* CloseButton_27x27.png */; };
 		A68F050515D078900023F961 /* CloseButton_27x27@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A68F050315D078900023F961 /* CloseButton_27x27@2x.png */; };
 		A69A97731621053D002CE875 /* dimmer_bar_280x15@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A69A97721621053D002CE875 /* dimmer_bar_280x15@2x.png */; };
@@ -276,6 +278,8 @@
 		A68955061648B97D00675773 /* lib3DAR.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib3DAR.a; path = ../../../../SpotMetrix/3DAR/Library/tmp/fat/lib3DAR.a; sourceTree = "<group>"; };
 		A68955081648C77B00675773 /* door_open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = door_open.wav; sourceTree = "<group>"; };
 		A68955091648C77B00675773 /* swoosh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = swoosh.wav; sourceTree = "<group>"; };
+		A689550C1648F49F00675773 /* Hand_91x48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hand_91x48.png; sourceTree = "<group>"; };
+		A689550D1648F49F00675773 /* Hand_91x48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hand_91x48@2x.png"; sourceTree = "<group>"; };
 		A68F050215D078900023F961 /* CloseButton_27x27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseButton_27x27.png; sourceTree = "<group>"; };
 		A68F050315D078900023F961 /* CloseButton_27x27@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseButton_27x27@2x.png"; sourceTree = "<group>"; };
 		A69A97721621053D002CE875 /* dimmer_bar_280x15@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dimmer_bar_280x15@2x.png"; sourceTree = "<group>"; };
@@ -530,6 +534,8 @@
 				A6169E8B14BA5D33006A74C8 /* DudeUp150.png */,
 				A6169E8C14BA5D33006A74C8 /* DudeUp150@2x.png */,
 				A63E0D91147A04DC00D331E2 /* Glass */,
+				A689550C1648F49F00675773 /* Hand_91x48.png */,
+				A689550D1648F49F00675773 /* Hand_91x48@2x.png */,
 				A650E6EE163DF9DA001D37A3 /* Icon.png */,
 				A650E6ED163DF9DA001D37A3 /* Icon@2x.png */,
 				A6775BF816248F3400F70E46 /* polaris.png */,
@@ -733,6 +739,8 @@
 				A650E6F0163DF9DA001D37A3 /* Icon.png in Resources */,
 				A689550A1648C77B00675773 /* door_open.wav in Resources */,
 				A689550B1648C77B00675773 /* swoosh.wav in Resources */,
+				A689550E1648F49F00675773 /* Hand_91x48.png in Resources */,
+				A689550F1648F49F00675773 /* Hand_91x48@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

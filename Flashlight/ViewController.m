@@ -75,6 +75,7 @@ CGFloat degreesToRadians(CGFloat degrees);
     [_sunContainerDark release];
     [_sunButtonWhite release];
     [_sunButtonBlack release];
+    [_handy release];
     [super dealloc];
 }
 
@@ -384,6 +385,7 @@ CGFloat degreesToRadians(CGFloat degrees);
     [self setSunContainerDark:nil];
     [self setSunButtonWhite:nil];
     [self setSunButtonBlack:nil];
+    [self setHandy:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -716,6 +718,7 @@ CGFloat previousTouchX;
     CGFloat newDimmerAlpha = handleU;
     
     self.lightContainer.alpha = newDimmerAlpha;
+    self.handy.alpha = newDimmerAlpha;
     
 
     
