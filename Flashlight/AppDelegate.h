@@ -21,6 +21,8 @@
 
 - (void)playClickSound;
 - (void)playChimeSound;
+- (void)playDoorSound;
+- (void)playSwooshSound;
 
 @end
 

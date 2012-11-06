@@ -73,6 +73,8 @@ CGFloat degreesToRadians(CGFloat degrees);
     [_dimmerControls release];
     [_sunContainerLight release];
     [_sunContainerDark release];
+    [_sunButtonWhite release];
+    [_sunButtonBlack release];
     [super dealloc];
 }
 
@@ -181,7 +183,7 @@ CGFloat degreesToRadians(CGFloat degrees);
             if (![self inMode:RunModeSkyModeOn])
             {
                 // Dim the screen if torch is on on home screen.
-                [self goDim];
+                //[self goDim];
             }
         }
         else
@@ -216,7 +218,6 @@ CGFloat degreesToRadians(CGFloat degrees);
     _sm3dar.view.hidden = YES;
     [self.view insertSubview:_sm3dar.view atIndex:0];
     [self.view bringSubviewToFront:self.dimmerTouchpad];
-
 }
 
 - (void) sm3dar:(SM3DARController *)sm3dar didChangeFocusToPOI:(SM3DARPoint*)newPOI fromPOI:(SM3DARPoint*)oldPOI
@@ -331,20 +332,27 @@ CGFloat degreesToRadians(CGFloat degrees);
     [self adaptToScreenSize];
     [self setDimmerFromTouchX:320];
     
+    
     self.splash.hidden = NO;
-    self.starWorldButton.alpha = 0.15;
-    CGFloat scale = 0.97;
+    self.starWorldButton.alpha = 1.0;
+
+    CGFloat scale = 0.8;
     self.starWorldButton.transform = CGAffineTransformMakeScale(scale, scale);
 
-    
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationRepeatAutoreverses:YES];
     [UIView setAnimationRepeatCount:INT_MAX];
-    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationDuration:1.33];
     
     scale = 1.15;
     self.starWorldButton.transform = CGAffineTransformMakeScale(scale, scale);
     self.starWorldButton.alpha = 1.0;
+    self.starWorldButton.center = CGPointMake(self.starWorldButton.center.x,
+                                              self.starWorldButton.center.y-15);
+    
+    scale = 0.98;
+    self.sunButtonWhite.alpha = 0.1;
+    self.sunButtonWhite.transform = CGAffineTransformMakeScale(scale, scale);
 
     [UIView commitAnimations];
 
@@ -374,6 +382,8 @@ CGFloat degreesToRadians(CGFloat degrees);
     [self setDimmerControls:nil];
     [self setSunContainerLight:nil];
     [self setSunContainerDark:nil];
+    [self setSunButtonWhite:nil];
+    [self setSunButtonBlack:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -394,10 +404,20 @@ CGFloat degreesToRadians(CGFloat degrees);
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationDidStopSelector:@selector(splashWasHidden)];
-
     self.splash.alpha = 0.0;
+    [UIView commitAnimations];
+
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationRepeatAutoreverses:YES];
+    [UIView setAnimationRepeatCount:INT_MAX];
+    [UIView setAnimationDuration:1.66];
+    
+    CGFloat scale = 0.98;
+    self.sunButtonBlack.transform = CGAffineTransformMakeScale(scale, scale);
     
     [UIView commitAnimations];
+
 }
 
 - (void)splashWasHidden
@@ -587,7 +607,12 @@ CGFloat degreesToRadians(CGFloat degrees)
     [self addSkyPano];
    // [self addInfoPoint];
     [self addPlanetoids];
-    [self addNorthStar];
+    
+    if ([CLLocationManager headingAvailable])
+    {
+        [self addNorthStar];
+    }
+
     [self addStars];
 }
 
@@ -840,14 +865,20 @@ CGFloat previousTouchX;
                                      {
                                          if (headingLeft)
                                          {
+//                                             [APP_DELEGATE playSwooshSound];
+
                                              star.alpha = 0.0;
                                              star.highlighted = YES;
 
                                              CGFloat scale = 15.0;
+                                             CGFloat x = 160 - star.center.x;
+                                             CGFloat y = -240;
                                              
                                              CGAffineTransform xfmScale = CGAffineTransformScale(star.transform, scale, scale);
                                              CGAffineTransform xfmRotate = CGAffineTransformRotate(star.transform, -M_PI_2);
-                                             CGAffineTransform xfmTranslate = CGAffineTransformTranslate(star.transform, 0, -120);
+                                             CGAffineTransform xfmTranslate = CGAffineTransformTranslate(star.transform,
+                                                                                                         x,
+                                                                                                         y);
                                              
                                              star.transform = CGAffineTransformConcat(
                                                                 CGAffineTransformConcat(xfmRotate, xfmScale),
@@ -860,6 +891,8 @@ CGFloat previousTouchX;
                                      
                                      if (!headingLeft)
                                      {
+//                                         [APP_DELEGATE playSwooshSound];
+                                         
                                          for (UIImageView *star in passedStars)
                                          {
                                              star.transform = CGAffineTransformIdentity;
@@ -880,15 +913,25 @@ CGFloat previousTouchX;
 
 - (void)setStarWorldButtonHidden:(BOOL)hidden
 {
-    self.starWorldButton.hidden = hidden;
-    
-    CGFloat alpha = (hidden ? 0.0 : 1.0);
+    if (self.starWorldButton.hidden != hidden)
+    {
+        if (self.starWorldButton.hidden)
+        {
+            // Only sound when showing.
+            [APP_DELEGATE playDoorSound];
+        }
+        
 
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.25];
-//    self.starWorldButton.alpha = alpha;
-    self.tapTapWhiteButton.alpha = (1.0 - alpha);
-    [UIView commitAnimations];
+        self.starWorldButton.hidden = hidden;
+        
+        CGFloat alpha = (hidden ? 0.0 : 1.0);
+        
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.25];
+        //    self.starWorldButton.alpha = alpha;
+        self.tapTapWhiteButton.alpha = (1.0 - alpha);
+        [UIView commitAnimations];
+    }
 
 }
 

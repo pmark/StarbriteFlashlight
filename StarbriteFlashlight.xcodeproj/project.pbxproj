@@ -127,11 +127,13 @@
 		A6894B31147106AD00DBDAA4 /* planet3.png in Resources */ = {isa = PBXBuildFile; fileRef = A6894B2E147106AD00DBDAA4 /* planet3.png */; };
 		A6894B32147106AD00DBDAA4 /* planet2.png in Resources */ = {isa = PBXBuildFile; fileRef = A6894B2F147106AD00DBDAA4 /* planet2.png */; };
 		A6894B33147106AD00DBDAA4 /* planet1.png in Resources */ = {isa = PBXBuildFile; fileRef = A6894B30147106AD00DBDAA4 /* planet1.png */; };
+		A68955071648B97D00675773 /* lib3DAR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A68955061648B97D00675773 /* lib3DAR.a */; };
+		A689550A1648C77B00675773 /* door_open.wav in Resources */ = {isa = PBXBuildFile; fileRef = A68955081648C77B00675773 /* door_open.wav */; };
+		A689550B1648C77B00675773 /* swoosh.wav in Resources */ = {isa = PBXBuildFile; fileRef = A68955091648C77B00675773 /* swoosh.wav */; };
 		A68F050415D078900023F961 /* CloseButton_27x27.png in Resources */ = {isa = PBXBuildFile; fileRef = A68F050215D078900023F961 /* CloseButton_27x27.png */; };
 		A68F050515D078900023F961 /* CloseButton_27x27@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A68F050315D078900023F961 /* CloseButton_27x27@2x.png */; };
 		A69A97731621053D002CE875 /* dimmer_bar_280x15@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A69A97721621053D002CE875 /* dimmer_bar_280x15@2x.png */; };
 		A69A977616210570002CE875 /* dimmer_bar_280x15.png in Resources */ = {isa = PBXBuildFile; fileRef = A69A977516210570002CE875 /* dimmer_bar_280x15.png */; };
-		A6A886D216424ABE00388751 /* lib3DAR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A886D116424ABE00388751 /* lib3DAR.a */; };
 		A6B8CFAD14BAD75400FA8483 /* PlanetView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B8CFAC14BAD75400FA8483 /* PlanetView.m */; };
 /* End PBXBuildFile section */
 
@@ -271,11 +273,13 @@
 		A6894B2E147106AD00DBDAA4 /* planet3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planet3.png; sourceTree = "<group>"; };
 		A6894B2F147106AD00DBDAA4 /* planet2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planet2.png; sourceTree = "<group>"; };
 		A6894B30147106AD00DBDAA4 /* planet1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planet1.png; sourceTree = "<group>"; };
+		A68955061648B97D00675773 /* lib3DAR.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib3DAR.a; path = ../../../../SpotMetrix/3DAR/Library/tmp/fat/lib3DAR.a; sourceTree = "<group>"; };
+		A68955081648C77B00675773 /* door_open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = door_open.wav; sourceTree = "<group>"; };
+		A68955091648C77B00675773 /* swoosh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = swoosh.wav; sourceTree = "<group>"; };
 		A68F050215D078900023F961 /* CloseButton_27x27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseButton_27x27.png; sourceTree = "<group>"; };
 		A68F050315D078900023F961 /* CloseButton_27x27@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseButton_27x27@2x.png"; sourceTree = "<group>"; };
 		A69A97721621053D002CE875 /* dimmer_bar_280x15@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dimmer_bar_280x15@2x.png"; sourceTree = "<group>"; };
 		A69A977516210570002CE875 /* dimmer_bar_280x15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dimmer_bar_280x15.png; sourceTree = "<group>"; };
-		A6A886D116424ABE00388751 /* lib3DAR.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib3DAR.a; path = "../../../../../Library/Developer/Xcode/DerivedData/SM3DAR-dpowqirbrbycxcaczextffmwjygz/Build/Products/Debug-iphoneos/lib3DAR.a"; sourceTree = "<group>"; };
 		A6B8CFA914BAD69900FA8483 /* WorldAtNight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WorldAtNight.jpg; sourceTree = "<group>"; };
 		A6B8CFAB14BAD75400FA8483 /* PlanetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetView.h; sourceTree = "<group>"; };
 		A6B8CFAC14BAD75400FA8483 /* PlanetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetView.m; sourceTree = "<group>"; };
@@ -296,7 +300,7 @@
 				A641EA2D1466F9020009772B /* AVFoundation.framework in Frameworks */,
 				A641EA0C1466F6B80009772B /* UIKit.framework in Frameworks */,
 				A641EA0E1466F6B80009772B /* Foundation.framework in Frameworks */,
-				A6A886D216424ABE00388751 /* lib3DAR.a in Frameworks */,
+				A68955071648B97D00675773 /* lib3DAR.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +505,7 @@
 		A6894ADD147091D000DBDAA4 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				A6A886D116424ABE00388751 /* lib3DAR.a */,
+				A68955061648B97D00675773 /* lib3DAR.a */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -520,6 +524,7 @@
 				A69A97721621053D002CE875 /* dimmer_bar_280x15@2x.png */,
 				A6775BFC162499A700F70E46 /* DimmerBar_267x8.png */,
 				A6775BFD162499A700F70E46 /* DimmerBar_267x8@2x.png */,
+				A68955081648C77B00675773 /* door_open.wav */,
 				A6169E8914BA5D33006A74C8 /* DudeDown150.png */,
 				A6169E8A14BA5D33006A74C8 /* DudeDown150@2x.png */,
 				A6169E8B14BA5D33006A74C8 /* DudeUp150.png */,
@@ -541,6 +546,7 @@
 				A6775C03162499A700F70E46 /* SunDark_281x281@2x.png */,
 				A6775C04162499A700F70E46 /* SunLight_281x281.png */,
 				A6775C05162499A700F70E46 /* SunLight_281x281@2x.png */,
+				A68955091648C77B00675773 /* swoosh.wav */,
 				A650E6E5163DE93B001D37A3 /* TapTap_Black_74x21.png */,
 				A650E6E8163DE93B001D37A3 /* TapTap_Black_74x21@2x.png */,
 				A650E6E6163DE93B001D37A3 /* TapTap_White_74x21.png */,
@@ -725,6 +731,8 @@
 				A650E6EC163DE93B001D37A3 /* TapTap_Black_74x21@2x.png in Resources */,
 				A650E6EF163DF9DA001D37A3 /* Icon@2x.png in Resources */,
 				A650E6F0163DF9DA001D37A3 /* Icon.png in Resources */,
+				A689550A1648C77B00675773 /* door_open.wav in Resources */,
+				A689550B1648C77B00675773 /* swoosh.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,6 +838,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/3DAR/Lib\"",
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/SM3DAR-dpowqirbrbycxcaczextffmwjygz/Build/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../../SpotMetrix/3DAR/Library/tmp/fat\"",
 				);
 				PRODUCT_NAME = Starbrite;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -847,6 +856,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/3DAR/Lib\"",
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/SM3DAR-dpowqirbrbycxcaczextffmwjygz/Build/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../../SpotMetrix/3DAR/Library/tmp/fat\"",
 				);
 				PRODUCT_NAME = Starbrite;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -13,6 +13,8 @@
 {
     AVAudioPlayer *clickSound;
     AVAudioPlayer *chimeSound;
+    AVAudioPlayer *doorSound;
+    AVAudioPlayer *swooshSound;
 }
 @end
 
@@ -103,6 +105,14 @@
     url = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"CrystalGlass" ofType:@"wav"]];
     chimeSound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [chimeSound prepareToPlay];
+
+    url = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"door_open" ofType:@"wav"]];
+    doorSound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [doorSound prepareToPlay];
+
+    url = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"swoosh" ofType:@"wav"]];
+    swooshSound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [swooshSound prepareToPlay];
 }
 
 - (void)playClickSound
@@ -113,6 +123,16 @@
 - (void)playChimeSound
 {
     [chimeSound play];
+}
+
+- (void)playDoorSound
+{
+    [doorSound play];
+}
+
+- (void)playSwooshSound
+{
+    [swooshSound play];
 }
 
 @end
